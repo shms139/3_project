@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Check;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -25,6 +26,9 @@ class DatabaseSeeder extends Seeder
             TheClassSeeder::class,
             ClassesAnnSeeder::class,
             WeeklyProgramSeeder::class,
+            SubjectSeeder::class,
+            MarkSeeder::class,
+            CheckSeeder::class,
         ]);
     }
 }

@@ -4,6 +4,7 @@ namespace App\Models;
 
 use App\Http\Controllers\DirectorController;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class TheClass extends Model
@@ -19,4 +20,10 @@ class TheClass extends Model
     {
         return $this->hasOne(DirectorController::class);
     }
+
+    public function marks(): HasMany
+    {
+        return $this->hasMany(Mark::class);
+    }
+
 }

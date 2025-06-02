@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Director;
+use App\Models\Mark;
 use App\Models\Student;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -28,6 +29,15 @@ class DirectorController extends Controller
 
       //}
   }
+  public function add_mark ()
+  {
+      Mark::create([
+          'student_id' => 1,
+          'director_id' => 2,
+          'class_model_id' => 3,
+          'subject_id' => 4,
+          'mark' => 95
+      ]);
 
-
+  }
 }

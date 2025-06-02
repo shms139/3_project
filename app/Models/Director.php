@@ -28,4 +28,10 @@ class Director extends Model
     {
         return $this->hasMany(WeeklyProgram::class);
     }
+
+    public function marks()
+    {
+        return $this->hasMany(Mark::class);
+    }
+
 }

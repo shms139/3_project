@@ -11,12 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('checks', function (Blueprint $table) {
+        Schema::create('marks', function (Blueprint $table) {
             $table->id();
             $table->foreignId('director_id')->constrained()->cascadeOnUpdate()->cascadeOnDelete();
             $table->foreignId('student_id')->constrained()->cascadeOnUpdate()->cascadeOnDelete();
-            $table->date('date');//->default("images/default.jpg");
-            $table->boolean('check');
+            $table->foreignId('the_class_id')->constrained()->cascadeOnUpdate()->cascadeOnDelete();
+            $table->foreignId('subject_id')->constrained()->cascadeOnUpdate()->cascadeOnDelete();
+            $table->string("mark");
+
             $table->timestamps();
         });
     }
@@ -26,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('checks');
+        Schema::dropIfExists('marks');
     }
 };
