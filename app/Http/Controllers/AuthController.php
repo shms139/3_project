@@ -62,28 +62,32 @@ class AuthController extends Controller
                     'message' => 'director logged in successfuly!',
                     //'redirect_url' => '/dashboard'
                 ]);
-            }
-        };
+            } elseif ($user->role === 'p_student') {
+                return response()->json([
+                    "status" => 200,
+                    "data" => $data,
+                    'message' => 'p_student logged in successfuly!',
+                    //'redirect_url' => '/dashboard'
+                ]);
+
+            };
+        }
     }
 
     public function register_Director_in_admin(Request $request): JsonResponse
     {
         $request->validate([
-            'firstname' => ['required|string|max:10'],//
-            'lastname' => ['required|string|max:10'],
-            "address" => ['required|string'],
-            // 'role' => ['required|in:,manager,guide', 'student'],
-            // 'discount' => ['required|boolean'],
-            //'parents_job' => ['required|string'],
-            'date' => ['required|date|after:2010-01-01|before:2020-12-31'],
-            //'the_class' =>["required", "string", "in::first,second,third,fourth,fifth "],
-            "mobile" => ['required' | 'unique:users,mobile'],
-            'password' => ['required'],
-            //'salary'=>['reqired |integer|min:300000|max:700000'],
-            'email' => ['required|email'],
+                'firstname' => ['required', 'string', 'max:10'],
+                'lastname' => ['required', 'string', 'max:10'],
+                'address' => ['required', 'string'],
+                'date' => ['required', 'date', 'after:2010-01-01', 'before:2020-12-31'],
+                'mobile' => ['required', 'unique:directors,mobile'],
+                'password' => ['required'],
+                'email' => ['required', 'email'],
+            'user_id' => ['required']
+            ]);
 
-        ], ['mobile.unique' => "Mobile is not unique"]// لتوضيح رسالة الخطأ للفلتر
-        );
+//        ], ['mobile.unique' => "Mobile is not unique"]// لتوضيح رسالة الخطأ للفلتر
 
         $user = Director::query()->create([
             'firstname' => $request['username'],
@@ -99,7 +103,9 @@ class AuthController extends Controller
             //   'subject' => $request['subject'],
             //  'salary'=>$request['salary'],
             'email' => $request["email"],
+            'user_id' => $request['user_id']
         ]);
+        dd();
 
         return response()////return $request=> usernam ,mobile and password only butreturn  $user =>will come all migrate of model ex: username , mobile  password and id and date
         ->json([

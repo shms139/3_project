@@ -14,6 +14,7 @@ Route::post('/createAnnouncements',[AdminController::class,"createAnnouncements"
 
 Route::middleware('auth:sanctum')->group(function (){
     Route::get('/logout',[AuthController::class,'logout']);
+    Route::post('/register_Director_in_admin',[AuthController::class,'register_Director_in_admin']);
     Route::get('/user/{id}',[AuthController::class,'user']);
 
 });
