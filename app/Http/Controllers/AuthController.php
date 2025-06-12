@@ -18,10 +18,12 @@ class AuthController extends Controller
     public function login(Request $request)
     {
         $request->validate([
+
             "email" => ["required", 'email', "exists:users,email"],
             "password" => ["required", 'string'],
             // "role" => ["required", "string", "in:student,manager,admin"],
         ]);
+
         if (!Auth::attempt($request->only(['email', 'password']))) {
             $message = "email & Password does not match with our record.";
             return response()->json([
@@ -76,6 +78,9 @@ class AuthController extends Controller
 
     public function register_Director_in_admin(Request $request): JsonResponse
     {
+        if (auth()->user()->role !== 'manager') {
+            abort(403, 'Unauthorized');
+        }
         $request->validate([
                 'firstname' => ['required', 'string', 'max:10'],
                 'lastname' => ['required', 'string', 'max:10'],
@@ -83,14 +88,14 @@ class AuthController extends Controller
                 'date' => ['required', 'date', 'after:2010-01-01', 'before:2020-12-31'],
                 'mobile' => ['required', 'unique:directors,mobile'],
                 'password' => ['required'],
-                'email' => ['required', 'email'],
+                'email' => ['required', 'email','unique:directors,email'],
             'user_id' => ['required']
             ]);
 
 //        ], ['mobile.unique' => "Mobile is not unique"]// لتوضيح رسالة الخطأ للفلتر
 
         $user = Director::query()->create([
-            'firstname' => $request['username'],
+            'firstname' => $request['firstname'],
             'lastname' => $request["lastname"],
             'address' => $request["address"],
             //  'role' => $request["role"],
@@ -105,18 +110,21 @@ class AuthController extends Controller
             'email' => $request["email"],
             'user_id' => $request['user_id']
         ]);
-        dd();
 
         return response()////return $request=> usernam ,mobile and password only butreturn  $user =>will come all migrate of model ex: username , mobile  password and id and date
         ->json([
             'status' => 1,
             "date" => $user,
             "message" => "director created successfuly"
+
         ]);
     }
 
     public function registerStudent(Request $request): JsonResponse
     {
+        if (auth()->user()->role !== 'director') {
+            abort(403, 'Unauthorized');
+        }
         $request->validate([
             'firstname' => ['required|string|max:10'],//
             'lastname' => ['required|string|max:10'],
@@ -162,25 +170,28 @@ class AuthController extends Controller
 
     public function registerParent_student(Request $request): JsonResponse
     {
-        $request->validate([
-            'firstname' => ['required|string|max:10'],//
-            // 'lastname' => ['required|string|max:10'],
-            //"address" => ['required|string'],
-            // 'role' => ['required|in:,manager,guide', 'student'],
-            // 'discount' => ['required|boolean'],
-            'son_name' => ['required|string'],
-            // 'date' => ['required|date|after:2010-01-01|before:2020-12-31'],
-            // 'the_class' => ["required", "string", "in::first,second,third,fourth,fifth "],
-            "mobile" => ['required' | 'unique:users,mobile'],
-            'password' => ['required|string'],
-            //'salary'=>['reqired |integer|min:300000|max:700000'],
-            'email' => ['required|email'],
-        ], ['mobile.unique' => "Mobile is not unique"]// لتوضيح رسالة الخطأ للفلتر
-        );
+        if (auth()->user()->role !== 'director') {
+            abort(403, 'Unauthorized');
+        $validatedData = $request->validate([
+            'firstname' => ['required', 'string', 'max:10'],
+            // 'lastname' => ['required', 'string', 'max:10'],
+            // 'address' => ['required', 'string'],
+            // 'role' => ['required', 'in:manager,guide,student'],
+            // 'discount' => ['required', 'boolean'],
+            'son_name' => ['required', 'string'],
+            // 'date' => ['required', 'date', 'after:2010-01-01', 'before:2020-12-31'],
+            // 'the_class' => ['required', 'string', 'in:first,second,third,fourth,fifth'],
+            'mobile' => ['required', 'unique:users,mobile'],
+            'password' => ['required', 'string'],
+            // 'salary' => ['required', 'integer', 'min:300000', 'max:700000'],
+            'email' => ['required', 'email'],
+        ], [
+            'mobile.unique' => "Mobile is not unique",
+        ]);
 
         $user = P_student::query()->create([
             'firstname' => $request['username'],
-            'lastname' => $request["lastname"],
+            //'lastname' => $request["lastname"],
             //   'address' => $request["address"],
             //   'role' => $request["role"],
             //    'discount' => $request['Discount'],
