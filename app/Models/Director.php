@@ -34,4 +34,15 @@ class Director extends Model
         return $this->hasMany(Mark::class);
     }
 
+    public function students()
+    {
+        return $this->hasMany(Student::class);
+    }
+
+    public function Chat_parentStudents()
+    {
+        return $this->belongsToMany(P_student::class);
+    }
+
+
 }

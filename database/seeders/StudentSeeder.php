@@ -30,6 +30,7 @@ class StudentSeeder extends Seeder
         $pr8 = ['teacher', 'doctor', "dentist", 'physical', 'factors'];
         $pr10 = ['0911111111@gmail.com', '0911111112@gmail.com', '0911111113@gmail.com', "0911111114@gmail.com", '0911111115@gmail.com'];
         $pr5 = ['12', '13', '14', '15', '16'];
+        $pr12 = ['1', '2', '4', '5', '3'];
 
 
 //        $parentIds = P_student::pluck('id'); // يعيد Collection من IDs فقط
@@ -80,9 +81,8 @@ class StudentSeeder extends Seeder
                 "the_class" => $pr9[$i],
                 "parents_job" => $pr8[$i],
                 "parents_name" => $pr11[$i],
+                'director_id' => $pr12[$i],
                 'p_student_id' => $parentIds[$i] ?? null, // Safely get parent ID or null
-
-//                'p_student_id' => $pr10[$i],
             ]);
         }
     }

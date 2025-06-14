@@ -29,6 +29,8 @@ class DatabaseSeeder extends Seeder
             SubjectSeeder::class,
             MarkSeeder::class,
             CheckSeeder::class,
+            WeeklyProgramSeeder::class,
+            ChatSeeder::class,
         ]);
     }
 }

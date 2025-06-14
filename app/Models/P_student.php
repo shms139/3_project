@@ -23,6 +23,11 @@ class P_student extends Model
     {
         return $this->belongsToMany(Director::class, 'director_p_student');
     }
+    public function Chat_directors()
+    {
+        return $this->belongsToMany(Director::class);
+    }
+
 
 
 }
