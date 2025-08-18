@@ -14,11 +14,6 @@ class Director extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function announcements(): HasMany
-    {
-        return $this->hasMany(Announcement::class);
-    }
-
     public function parentStudents()
     {
         return $this->belongsToMany(P_student::class, 'director_p_student');

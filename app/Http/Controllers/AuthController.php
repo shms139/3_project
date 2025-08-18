@@ -87,7 +87,7 @@ class AuthController extends Controller
         ]);
     }
 
-    public function user($id): JsonResponse // لم أعرف أكمله
+    public function user($id): JsonResponse
     {
 
         $user = [];
@@ -105,13 +105,4 @@ class AuthController extends Controller
 //        // إعادة التوجيه مع رسالة نجاح
 //        return redirect()->route('students.index')->with('success', 'تم حذف الطالب بنجاح');
 
-
-  /*  public function index2($id){
-        $products = Drug::where('quality_id' , $id)->get();
-
-        //dd($products);
-        // echo $oneProd->name;
-        return $this->sendResponse($products,200);
-    }
-*/
 }

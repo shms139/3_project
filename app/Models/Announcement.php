@@ -3,14 +3,15 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Announcement extends Model
 {
     protected $guarded = [];
 
-    public function director(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    public function admin(): BelongsTo
     {
-        return $this->belongsTo(Director::class);
+        return $this->belongsTo(Admin::class);
     }
 
     public function the_class()

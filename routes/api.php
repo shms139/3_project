@@ -22,7 +22,7 @@ Route::middleware('auth:sanctum')->group(function (){
     Route::delete('/destroy/{id}',[DirectorController::class,'destroy']);
     Route::post('/createAnnouncements',[AdminController::class,"createAnnouncements"]);
     Route::get('/index_Ann',[AdminController::class,'index_Ann']);
-    Route::get('/user/{id}',[AuthController::class,'user']);// لم أكمله
+    Route::get('/user/{id}',[AuthController::class,'user']);
     Route::post('/addMark',[DirectorController::class,"addMark"]);
     Route::get('/getMarks/{classId}/{subjectId}',[DirectorController::class,"getMarksByClassAndSubject"]);
     Route::get('/getStudentDetailsByMark/{markId}',[DirectorController::class,"getStudentDetailsByMark"]);

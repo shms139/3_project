@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Admin;
 use App\Models\Announcement;
+use App\Models\Classes_Ann;
 use App\Models\Director;
 use App\Models\User;
 use Cassandra\Collection;
@@ -34,46 +35,51 @@ class AdminController extends Controller
 //        }
     }
 
-
         public function createAnnouncements(Request $request): JsonResponse
         {
             if (auth()->user()->role !== 'manager') {
                 abort(403, 'Unauthorized');
             }
-            $admin_id = $request->admin_id;
-            $body = $request->body;
-            $title = $request->title;
-            $date = $request->date;
 
             $request->validate([
-                "admin_id" => ["required"],
-                "date" => ["required", "date"],
-                "body" => ["required", "string", "max:255"],
-                "title" => ["required", "string", "max:255"],
+                "the_class_id"    =>["required"],
+                "admin_id"        => ["required"],
+                "date"            => ["required", "date"],
+                "body"            => ["required", "string", "max:255"],
+                "title"           => ["required", "string", "max:255"],
             ]);
 
-            $creatAnn = Announcement::query()->create([
-                "admin_id" => $admin_id,
-                "date" => $date,
-                "body" => $body,
-                'title' => $title
+            $announcement = Announcement::create([
+                "admin_id" => $request->admin_id,
+                "date"     => $request->date,
+                "body"     => $request->body,
+                "title"    => $request->title
+            ]);
+
+            Classes_Ann::create([
+                "the_class_id"     => $request->the_class_id,
+                "announcement_id" => $announcement->id,
             ]);
 
             return response()->json([
-                'message' => 'تم إضافة الطلب بنجاح',
-                'data' => $creatAnn
+                'success' => true,
+                'message' => 'تم إضافة الإعلان بنجاح',
+                'data'    => $announcement
             ]);
         }
-        public function index_Ann(): JsonResponse
-        {
-                $Ann = Announcement::all();//find(1);
-                return response()->json([
-                    'status' => 1,
-                    "date" => $Ann,
-                    "message" => "director created successfully",
-                        ]);
-            }
-        public function register_Director_in_admin(Request $request): JsonResponse
+
+    public function index_Ann(): JsonResponse
+    {
+        $announcements = Classes_Ann::with('announcement', 'theClass')->get();
+
+        return response()->json([
+            'success' => true,
+            'data'    => $announcements,
+            'message' => 'جميع الإعلانات تم جلبها بنجاح'
+        ]);
+    }
+
+    public function register_Director_in_admin(Request $request): JsonResponse
     {
         if (auth()->user()->role !== 'manager') {
             abort(403, 'Unauthorized');
