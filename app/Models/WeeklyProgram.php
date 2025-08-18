@@ -17,7 +17,7 @@ class WeeklyProgram extends Model
 
     public function classes(): BelongsTo
     {
-        return $this->belongsTo(DirectorController::class);
+        return $this->belongsTo(TheClass::class);
     }
 
 }

@@ -30,7 +30,6 @@ class User extends Authenticatable
         'password',
     ];
 */
-
     public function admin()
     {
         return $this->hasOne(AdminController::class);

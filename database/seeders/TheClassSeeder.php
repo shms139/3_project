@@ -19,7 +19,7 @@ class TheClassSeeder extends Seeder
         for ($i = 0; $i < 5; $i++) {
             TheClass::query()->create([
 //                'class_ann_id' => $pr5[$i],
-                'the_class' => $pr1[$i],
+                'name' => $pr1[$i],
             ]);
         }
     }

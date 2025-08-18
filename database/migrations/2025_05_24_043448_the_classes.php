@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('the_classes', function (Blueprint $table) {
           $table->id();
-          $table->enum('the_class',["first", 'second', 'third', 'fourth','fifth']);
+          $table->enum('name',["first", 'second', 'third', 'fourth','fifth']);
            // $table->foreignId('class_ann_id')->constrained()->cascadeOnDelete()->cascadeOnUpdate();
             // $table->string('');
           $table->timestamps();

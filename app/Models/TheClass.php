@@ -18,7 +18,7 @@ class TheClass extends Model
 
     public function weekly_program(): HasOne
     {
-        return $this->hasOne(DirectorController::class);
+        return $this->hasOne(WeeklyProgram::class);
     }
 
     public function marks(): HasMany

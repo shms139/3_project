@@ -18,6 +18,7 @@ return new class extends Migration
             $table->foreignId('the_class_id')->constrained()->cascadeOnUpdate()->cascadeOnDelete();
             $table->foreignId('subject_id')->constrained()->cascadeOnUpdate()->cascadeOnDelete();
             $table->string("mark");
+            $table->unique(['student_id', 'subject_id', 'the_class_id']);
 
             $table->timestamps();
         });
