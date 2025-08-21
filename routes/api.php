@@ -26,8 +26,8 @@ Route::middleware('auth:sanctum')->group(function (){
     Route::post('/addMark',[DirectorController::class,"addMark"]);
     Route::get('/getMarks/{classId}/{subjectId}',[DirectorController::class,"getMarksByClassAndSubject"]);
     Route::get('/getStudentDetailsByMark/{markId}',[DirectorController::class,"getStudentDetailsByMark"]);
-
-
+    Route::post('/weeklyPrograms', [DirectorController::class, 'storeWeeklyProgram']);
+    Route::get('/indexWeeklyPrograms',[DirectorController::class,"indexWeeklyPrograms"]);
 
 });
 Route::get('/user', function (Request $request) {

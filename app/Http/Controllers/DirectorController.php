@@ -8,6 +8,7 @@ use App\Models\Mark;
 use App\Models\P_student;
 use App\Models\Student;
 use App\Models\User;
+use App\Models\WeeklyProgram;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 
@@ -286,5 +287,45 @@ class DirectorController extends Controller
         ]);
     }
 
+    public function storeWeeklyProgram(Request $request): JsonResponse
+    {
+        if (auth()->user()->role !== 'director') {
+            abort(403, 'Unauthorized');
+        }
+        $request->validate([
+            'director_id' => 'required|exists:directors,id',
+            'the_class_id' => 'required|exists:the_classes,id',
+            'program_image' => 'required|image|mimes:jpg,jpeg,png|max:2048', // صورة فقط
+        ]);
+
+        // رفع الصورة وتخزينها
+        $imagePath = $request->file('program_image')->store('صور', 'public');
+        // إنشاء سجل جديد
+        $program = WeeklyProgram::create([
+            'program_image' => $imagePath,
+            'director_id' => $request->director_id,
+            'the_class_id' => $request->the_class_id,
+        ]);
+        // رجوع استجابة JSON
+        return response()->json([
+            'success' => true,
+            'message' => 'تمت إضافة البرنامج الأسبوعي بنجاح',
+            'data' => $program
+        ]);
+    }
+    public function indexWeeklyPrograms(): JsonResponse
+    {
+        // جلب كل البرامج مع روابط الصور الكاملة
+        $programs = WeeklyProgram::all()->map(function($program) {
+            $program->program_image_url = asset('storage/' . $program->program_image);
+            return $program;
+        });
+
+        return response()->json([
+            'success' => true,
+            'message' => 'تم جلب البرامج الأسبوعية بنجاح',
+            'data' => $programs
+        ]);
+    }
 
 }

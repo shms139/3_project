@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('director_id')->constrained()->cascadeOnUpdate()->cascadeOnDelete();
             $table->foreignId('the_class_id')->constrained()->cascadeOnUpdate()->cascadeOnDelete();
-            $table->string('program_name')->default("images/default.jpg");
+            $table->string('program_image')->default("images/default.jpg"); // هذا العمود مهم
             $table->timestamps();
         });
     }
