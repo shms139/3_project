@@ -1,0 +1,3258 @@
+{
+	"info": {
+		"_postman_id": "d21b0839-b882-4677-aec9-24ef5c9a6202",
+		"name": "3_project",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31623904"
+	},
+	"item": [
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "0911111111@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "111",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"login"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "login as director",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "0977777771@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "117",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"login"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 15 Aug 2025 23:11:38 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 15 Aug 2025 23:11:38 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.4"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": 200,\n    \"data\": {\n        \"user\": \"0977777771@gmail.com\",\n        \"token\": \"7|lp3w1hJ7rY53qCtXEO93vILisvAMO8XXRi8g2rmO8ad4c038\"\n    },\n    \"message\": \"director logged in successfuly!\"\n}"
+				},
+				{
+					"name": "login as p_student",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "0955555551@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "115",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"login"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 15 Aug 2025 23:12:52 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 15 Aug 2025 23:12:52 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.4"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": 200,\n    \"data\": {\n        \"user\": \"0955555551@gmail.com\",\n        \"token\": \"9|p3mpaUj0bPrxWdmpdPpQSqcJhm7kYIF4xY1BOy8Yf6943a07\"\n    },\n    \"message\": \"p_student logged in successfuly!\"\n}"
+				},
+				{
+					"name": "login as student",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "0911111111@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "111",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"login"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 15 Aug 2025 23:13:45 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 15 Aug 2025 23:13:45 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.4"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": 200,\n    \"data\": {\n        \"user\": \"0911111111@gmail.com\",\n        \"token\": \"10|T0KQxJVflEWQl2dO3Ok6jcNzYd1hkXztDLGSDbAo0353a062\"\n    },\n    \"message\": \"Student logged in successfuly!\"\n}"
+				}
+			]
+		},
+		{
+			"name": "login Copy as manager",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "0999999991@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "119",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"login"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "register_Director_in_admin",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "3|DfQnr0pM1sTI9EYesykg53u3bcm2DBLXUGMrI8frb560d999",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "add_dir2@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "119",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "firstname",
+							"value": "di1",
+							"type": "text"
+						},
+						{
+							"key": "lastname",
+							"value": "di1",
+							"type": "text"
+						},
+						{
+							"key": "address",
+							"value": "ma",
+							"type": "text"
+						},
+						{
+							"key": "date",
+							"value": "2002/5/5",
+							"type": "text"
+						},
+						{
+							"key": "mobile",
+							"value": "0949609493",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "111111111",
+							"type": "text"
+						},
+						{
+							"key": "user_id",
+							"value": "1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/register_Director_in_admin",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"register_Director_in_admin"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "add_dir@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "119",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "firstname",
+									"value": "di1",
+									"type": "text"
+								},
+								{
+									"key": "lastname",
+									"value": "di1",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "ma",
+									"type": "text"
+								},
+								{
+									"key": "date",
+									"value": "2002/5/5",
+									"type": "text"
+								},
+								{
+									"key": "mobile",
+									"value": "0949609494",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "111111111",
+									"type": "text"
+								},
+								{
+									"key": "user_id",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/register_Director_in_admin",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"register_Director_in_admin"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 15 Aug 2025 23:08:20 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 15 Aug 2025 23:08:20 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.4"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": 1,\n    \"date\": {\n        \"firstname\": \"di1\",\n        \"lastname\": \"di1\",\n        \"address\": \"ma\",\n        \"date\": \"2002/5/5\",\n        \"mobile\": \"0949609494\",\n        \"password\": \"111111111\",\n        \"email\": \"add_dir@gmail.com\",\n        \"user_id\": \"1\",\n        \"updated_at\": \"2025-08-15T23:08:20.000000Z\",\n        \"created_at\": \"2025-08-15T23:08:20.000000Z\",\n        \"id\": 6\n    },\n    \"message\": \"director created successfuly\"\n}"
+				},
+				{
+					"name": "register_Director_in_admin",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "add_dir@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "119",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "firstname",
+									"value": "di1",
+									"type": "text"
+								},
+								{
+									"key": "lastname",
+									"value": "di1",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "ma",
+									"type": "text"
+								},
+								{
+									"key": "date",
+									"value": "2002/5/5",
+									"type": "text"
+								},
+								{
+									"key": "mobile",
+									"value": "0949609494",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "111111111",
+									"type": "text"
+								},
+								{
+									"key": "user_id",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/register_Director_in_admin",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"register_Director_in_admin"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 15 Aug 2025 23:08:20 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 15 Aug 2025 23:08:20 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.4"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": 1,\n    \"date\": {\n        \"firstname\": \"di1\",\n        \"lastname\": \"di1\",\n        \"address\": \"ma\",\n        \"date\": \"2002/5/5\",\n        \"mobile\": \"0949609494\",\n        \"password\": \"111111111\",\n        \"email\": \"add_dir@gmail.com\",\n        \"user_id\": \"1\",\n        \"updated_at\": \"2025-08-15T23:08:20.000000Z\",\n        \"created_at\": \"2025-08-15T23:08:20.000000Z\",\n        \"id\": 6\n    },\n    \"message\": \"director created successfuly\"\n}"
+				},
+				{
+					"name": "register_Director_in_admin",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "add_dir@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "119",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "firstname",
+									"value": "di1",
+									"type": "text"
+								},
+								{
+									"key": "lastname",
+									"value": "di1",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "ma",
+									"type": "text"
+								},
+								{
+									"key": "date",
+									"value": "2002/5/5",
+									"type": "text"
+								},
+								{
+									"key": "mobile",
+									"value": "0949609494",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "111111111",
+									"type": "text"
+								},
+								{
+									"key": "user_id",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/register_Director_in_admin",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"register_Director_in_admin"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 16 Aug 2025 20:50:56 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 16 Aug 2025 20:50:56 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.4"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": 1,\n    \"date\": {\n        \"firstname\": \"di1\",\n        \"lastname\": \"di1\",\n        \"address\": \"ma\",\n        \"date\": \"2002/5/5\",\n        \"mobile\": \"0949609494\",\n        \"password\": \"111111111\",\n        \"email\": \"add_dir@gmail.com\",\n        \"user_id\": \"1\",\n        \"updated_at\": \"2025-08-16T20:50:56.000000Z\",\n        \"created_at\": \"2025-08-16T20:50:56.000000Z\",\n        \"id\": 6\n    },\n    \"message\": \"director created successfuly\"\n}"
+				}
+			]
+		},
+		{
+			"name": "logout",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "11|nC1I6wKmI4PCVixdnCrSMRiGc1K3ynaTp7xm5joyccfae691",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8000/api/logout",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"logout"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/logout",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"logout"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 15 Aug 2025 22:58:48 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 15 Aug 2025 22:58:48 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.4"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": 1,\n    \"date\": [],\n    \"message\": \" You are loged out successfuly\"\n}"
+				},
+				{
+					"name": "logout",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/logout",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"logout"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 16 Aug 2025 14:59:57 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 16 Aug 2025 14:59:57 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.4"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": 1,\n    \"date\": [],\n    \"message\": \" You are loged out successfuly\"\n}"
+				}
+			]
+		},
+		{
+			"name": "registerParent_student",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "4|mNL9vpZL1OGftERis3yB57Z3bLuqK4GvfmVbBExd4c3fd60e",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "add_p_s@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "11",
+							"type": "text"
+						},
+						{
+							"key": "firstname",
+							"value": "p_s1",
+							"type": "text"
+						},
+						{
+							"key": "son_name",
+							"value": "St1",
+							"type": "text"
+						},
+						{
+							"key": "mobile",
+							"value": "0949609492",
+							"type": "text"
+						},
+						{
+							"key": "lastname",
+							"value": "p_S1",
+							"type": "text"
+						},
+						{
+							"key": "user_id",
+							"value": "2",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/registerParent_student",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"registerParent_student"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "registerParent_student",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "add_p_s@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "11",
+									"type": "text"
+								},
+								{
+									"key": "firstname",
+									"value": "p_s1",
+									"type": "text"
+								},
+								{
+									"key": "son_name",
+									"value": "St1",
+									"type": "text"
+								},
+								{
+									"key": "mobile",
+									"value": "0949609493",
+									"type": "text"
+								},
+								{
+									"key": "lastname",
+									"value": "p_S1",
+									"type": "text"
+								},
+								{
+									"key": "user_id",
+									"value": "2",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/registerParent_student",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"registerParent_student"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 16 Aug 2025 14:14:04 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 16 Aug 2025 14:14:03 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.4"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": 1,\n    \"date\": {\n        \"firstname\": \"p_s1\",\n        \"lastname\": \"p_S1\",\n        \"son_name\": \"St1\",\n        \"mobile\": \"0949609493\",\n        \"password\": \"11\",\n        \"email\": \"add_p_s@gmail.com\",\n        \"user_id\": \"2\",\n        \"updated_at\": \"2025-08-16T14:14:03.000000Z\",\n        \"created_at\": \"2025-08-16T14:14:03.000000Z\",\n        \"id\": 6\n    },\n    \"message\": \"parent_Student created successfuly\"\n}"
+				},
+				{
+					"name": "registerParent_student",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "add_p_s@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "11",
+									"type": "text"
+								},
+								{
+									"key": "firstname",
+									"value": "p_s1",
+									"type": "text"
+								},
+								{
+									"key": "son_name",
+									"value": "St1",
+									"type": "text"
+								},
+								{
+									"key": "mobile",
+									"value": "0949609493",
+									"type": "text"
+								},
+								{
+									"key": "lastname",
+									"value": "p_S1",
+									"type": "text"
+								},
+								{
+									"key": "user_id",
+									"value": "2",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/registerParent_student",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"registerParent_student"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 16 Aug 2025 20:59:34 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 16 Aug 2025 20:59:34 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.4"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": 1,\n    \"date\": {\n        \"firstname\": \"p_s1\",\n        \"lastname\": \"p_S1\",\n        \"son_name\": \"St1\",\n        \"mobile\": \"0949609493\",\n        \"password\": \"11\",\n        \"email\": \"add_p_s@gmail.com\",\n        \"user_id\": \"2\",\n        \"updated_at\": \"2025-08-16T20:59:34.000000Z\",\n        \"created_at\": \"2025-08-16T20:59:34.000000Z\",\n        \"id\": 6\n    },\n    \"message\": \"parent_Student created successfuly\"\n}"
+				}
+			]
+		},
+		{
+			"name": "registerStudent",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "4|mNL9vpZL1OGftERis3yB57Z3bLuqK4GvfmVbBExd4c3fd60e",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "firstname",
+							"value": "stsssd",
+							"type": "text"
+						},
+						{
+							"key": "lastname",
+							"value": "st1sd",
+							"type": "text"
+						},
+						{
+							"key": "address",
+							"value": "m",
+							"type": "text"
+						},
+						{
+							"key": "parents_job",
+							"value": "d",
+							"type": "text"
+						},
+						{
+							"key": "parents_name",
+							"value": "ps1",
+							"type": "text"
+						},
+						{
+							"key": "date",
+							"value": "2010/5/5",
+							"type": "text"
+						},
+						{
+							"key": "the_class",
+							"value": "first",
+							"type": "text"
+						},
+						{
+							"key": "mobile",
+							"value": "0991452080",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "01",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "st@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "director_id",
+							"value": "2",
+							"type": "text"
+						},
+						{
+							"key": "p_student_id",
+							"value": "5",
+							"type": "text"
+						},
+						{
+							"key": "user_id",
+							"value": "11",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/registerStudent",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"registerStudent"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "fouls_should_be_only_director",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/registerStudent?firstname=st_1&lastname=st_1&address=m&parents_job=d&parents_name=ps1&date=2010/5/5&the_class=first&mobile=0991452080&password=01&email=st@gmail.com",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"registerStudent"
+							],
+							"query": [
+								{
+									"key": "firstname",
+									"value": "st_1"
+								},
+								{
+									"key": "lastname",
+									"value": "st_1"
+								},
+								{
+									"key": "address",
+									"value": "m"
+								},
+								{
+									"key": "parents_job",
+									"value": "d"
+								},
+								{
+									"key": "parents_name",
+									"value": "ps1"
+								},
+								{
+									"key": "date",
+									"value": "2010/5/5"
+								},
+								{
+									"key": "the_class",
+									"value": "first"
+								},
+								{
+									"key": "mobile",
+									"value": "0991452080"
+								},
+								{
+									"key": "password",
+									"value": "01"
+								},
+								{
+									"key": "email",
+									"value": "st@gmail.com"
+								}
+							]
+						}
+					},
+					"status": "Forbidden",
+					"code": 403,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 16 Aug 2025 15:06:08 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 16 Aug 2025 15:06:08 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.4"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Unauthorized\",\n    \"exception\": \"Symfony\\\\Component\\\\HttpKernel\\\\Exception\\\\HttpException\",\n    \"file\": \"C:\\\\xampp1\\\\htdocs\\\\php_course\\\\laravel\\\\3_project\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Application.php\",\n    \"line\": 1425,\n    \"trace\": [\n        {\n            \"file\": \"C:\\\\xampp1\\\\htdocs\\\\php_course\\\\laravel\\\\3_project\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\helpers.php\",\n            \"line\": 50,\n            \"function\": \"abort\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Application\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp1\\\\htdocs\\\\php_course\\\\laravel\\\\3_project\\\\app\\\\Http\\\\Controllers\\\\AuthController.php\",\n            \"line\": 127,\n            \"function\": \"abort\"\n        },\n        {\n            \"file\": \"C:\\\\xampp1\\\\htdocs\\\\php_course\\\\laravel\\\\3_project\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\ControllerDispatcher.php\",\n            \"line\": 46,\n            \"function\": \"registerStudent\",\n            \"class\": \"App\\\\Http\\\\Controllers\\\\AuthController\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp1\\\\htdocs\\\\php_course\\\\laravel\\\\3_project\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Route.php\",\n            \"line\": 265,\n            \"function\": \"dispatch\",\n            \"class\": \"Illuminate\\\\Routing\\\\ControllerDispatcher\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp1\\\\htdocs\\\\php_course\\\\laravel\\\\3_project\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Route.php\",\n            \"line\": 211,\n            \"function\": \"runController\",\n            \"class\": \"Illuminate\\\\Routing\\\\Route\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp1\\\\htdocs\\\\php_course\\\\laravel\\\\3_project\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Router.php\",\n            \"line\": 808,\n            \"function\": \"run\",\n            \"class\": \"Illuminate\\\\Routing\\\\Route\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp1\\\\htdocs\\\\php_course\\\\laravel\\\\3_project\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 169,\n            \"function\": \"Illuminate\\\\Routing\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Routing\\\\Router\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp1\\\\htdocs\\\\php_course\\\\laravel\\\\3_project\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Middleware\\\\SubstituteBindings.php\",\n            \"line\": 50,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp1\\\\htdocs\\\\php_course\\\\laravel\\\\3_project\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 208,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Routing\\\\Middleware\\\\SubstituteBindings\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp1\\\\htdocs\\\\php_course\\\\laravel\\\\3_project\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Auth\\\\Middleware\\\\Authenticate.php\",\n            \"line\": 63,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp1\\\\htdocs\\\\php_course\\\\laravel\\\\3_project\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 208,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Auth\\\\Middleware\\\\Authenticate\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp1\\\\htdocs\\\\php_course\\\\laravel\\\\3_project\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 126,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp1\\\\htdocs\\\\php_course\\\\laravel\\\\3_project\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Router.php\",\n            \"line\": 807,\n            \"function\": \"then\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp1\\\\htdocs\\\\php_course\\\\laravel\\\\3_project\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Router.php\",\n            \"line\": 786,\n            \"function\": \"runRouteWithinStack\",\n            \"class\": \"Illuminate\\\\Routing\\\\Router\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp1\\\\htdocs\\\\php_course\\\\laravel\\\\3_project\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Router.php\",\n            \"line\": 750,\n            \"function\": \"runRoute\",\n            \"class\": \"Illuminate\\\\Routing\\\\Router\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp1\\\\htdocs\\\\php_course\\\\laravel\\\\3_project\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Router.php\",\n            \"line\": 739,\n            \"function\": \"dispatchToRoute\",\n            \"class\": \"Illuminate\\\\Routing\\\\Router\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp1\\\\htdocs\\\\php_course\\\\laravel\\\\3_project\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Kernel.php\",\n            \"line\": 200,\n            \"function\": \"dispatch\",\n            \"class\": \"Illuminate\\\\Routing\\\\Router\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp1\\\\htdocs\\\\php_course\\\\laravel\\\\3_project\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 169,\n            \"function\": \"Illuminate\\\\Foundation\\\\Http\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Kernel\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp1\\\\htdocs\\\\php_course\\\\laravel\\\\3_project\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\TransformsRequest.php\",\n            \"line\": 21,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp1\\\\htdocs\\\\php_course\\\\laravel\\\\3_project\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\ConvertEmptyStringsToNull.php\",\n            \"line\": 31,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\TransformsRequest\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp1\\\\htdocs\\\\php_course\\\\laravel\\\\3_project\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 208,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\ConvertEmptyStringsToNull\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp1\\\\htdocs\\\\php_course\\\\laravel\\\\3_project\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\TransformsRequest.php\",\n            \"line\": 21,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp1\\\\htdocs\\\\php_course\\\\laravel\\\\3_project\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\TrimStrings.php\",\n            \"line\": 51,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\TransformsRequest\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp1\\\\htdocs\\\\php_course\\\\laravel\\\\3_project\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 208,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\TrimStrings\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp1\\\\htdocs\\\\php_course\\\\laravel\\\\3_project\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Http\\\\Middleware\\\\ValidatePostSize.php\",\n            \"line\": 27,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp1\\\\htdocs\\\\php_course\\\\laravel\\\\3_project\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 208,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Http\\\\Middleware\\\\ValidatePostSize\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp1\\\\htdocs\\\\php_course\\\\laravel\\\\3_project\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\PreventRequestsDuringMaintenance.php\",\n            \"line\": 109,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp1\\\\htdocs\\\\php_course\\\\laravel\\\\3_project\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 208,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\PreventRequestsDuringMaintenance\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp1\\\\htdocs\\\\php_course\\\\laravel\\\\3_project\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Http\\\\Middleware\\\\HandleCors.php\",\n            \"line\": 61,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp1\\\\htdocs\\\\php_course\\\\laravel\\\\3_project\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 208,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Http\\\\Middleware\\\\HandleCors\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp1\\\\htdocs\\\\php_course\\\\laravel\\\\3_project\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Http\\\\Middleware\\\\TrustProxies.php\",\n            \"line\": 58,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp1\\\\htdocs\\\\php_course\\\\laravel\\\\3_project\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 208,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Http\\\\Middleware\\\\TrustProxies\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp1\\\\htdocs\\\\php_course\\\\laravel\\\\3_project\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\InvokeDeferredCallbacks.php\",\n            \"line\": 22,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp1\\\\htdocs\\\\php_course\\\\laravel\\\\3_project\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 208,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\InvokeDeferredCallbacks\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp1\\\\htdocs\\\\php_course\\\\laravel\\\\3_project\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Http\\\\Middleware\\\\ValidatePathEncoding.php\",\n            \"line\": 26,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp1\\\\htdocs\\\\php_course\\\\laravel\\\\3_project\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 208,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Http\\\\Middleware\\\\ValidatePathEncoding\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp1\\\\htdocs\\\\php_course\\\\laravel\\\\3_project\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 126,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp1\\\\htdocs\\\\php_course\\\\laravel\\\\3_project\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Kernel.php\",\n            \"line\": 175,\n            \"function\": \"then\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp1\\\\htdocs\\\\php_course\\\\laravel\\\\3_project\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Kernel.php\",\n            \"line\": 144,\n            \"function\": \"sendRequestThroughRouter\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Kernel\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp1\\\\htdocs\\\\php_course\\\\laravel\\\\3_project\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Application.php\",\n            \"line\": 1219,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Kernel\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp1\\\\htdocs\\\\php_course\\\\laravel\\\\3_project\\\\public\\\\index.php\",\n            \"line\": 20,\n            \"function\": \"handleRequest\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Application\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp1\\\\htdocs\\\\php_course\\\\laravel\\\\3_project\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\resources\\\\server.php\",\n            \"line\": 23,\n            \"function\": \"require_once\"\n        }\n    ]\n}"
+				},
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "firstname",
+									"value": "stsssd",
+									"type": "text"
+								},
+								{
+									"key": "lastname",
+									"value": "st1sd",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "m",
+									"type": "text"
+								},
+								{
+									"key": "parents_job",
+									"value": "d",
+									"type": "text"
+								},
+								{
+									"key": "parents_name",
+									"value": "ps1",
+									"type": "text"
+								},
+								{
+									"key": "date",
+									"value": "2010/5/5",
+									"type": "text"
+								},
+								{
+									"key": "the_class",
+									"value": "first",
+									"type": "text"
+								},
+								{
+									"key": "mobile",
+									"value": "0991452080",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "01",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "st@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "director_id",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "p_student_id",
+									"value": "5",
+									"type": "text"
+								},
+								{
+									"key": "user_id",
+									"value": "11",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/registerStudent",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"registerStudent"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 16 Aug 2025 15:30:12 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 16 Aug 2025 15:30:12 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.4"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": 1,\n    \"date\": {\n        \"firstname\": \"stsssd\",\n        \"lastname\": \"st1sd\",\n        \"address\": \"m\",\n        \"parents_job\": \"d\",\n        \"parents_name\": \"ps1\",\n        \"the_class\": \"first\",\n        \"date\": \"2010/5/5\",\n        \"mobile\": \"0991452080\",\n        \"password\": \"01\",\n        \"email\": \"st@gmail.com\",\n        \"director_id\": \"2\",\n        \"p_student_id\": \"5\",\n        \"user_id\": \"11\",\n        \"updated_at\": \"2025-08-16T15:30:12.000000Z\",\n        \"created_at\": \"2025-08-16T15:30:12.000000Z\",\n        \"id\": 8\n    },\n    \"message\": \"Student created successfuly\"\n}"
+				}
+			]
+		},
+		{
+			"name": "index_students",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "4|mNL9vpZL1OGftERis3yB57Z3bLuqK4GvfmVbBExd4c3fd60e",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8000/api/index_students",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"index_students"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/index_students",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"index_students"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 16 Aug 2025 21:10:07 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 16 Aug 2025 21:10:07 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.4"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"data\": [\n        {\n            \"id\": 1,\n            \"firstname\": \"st1\",\n            \"lastname\": \"st1\",\n            \"date\": \"2020-05-05\",\n            \"address\": \"damascus\",\n            \"email\": \"0911111111@gmail.com\",\n            \"mobile\": \"0911111111\",\n            \"password\": \"111\",\n            \"the_class\": \"first\",\n            \"parents_job\": \"teacher\",\n            \"parents_name\": \"psn1\",\n            \"user_id\": 12,\n            \"p_student_id\": 1,\n            \"director_id\": 1,\n            \"created_at\": \"2025-08-16T16:25:16.000000Z\",\n            \"updated_at\": \"2025-08-16T16:25:16.000000Z\"\n        },\n        {\n            \"id\": 2,\n            \"firstname\": \"st2\",\n            \"lastname\": \"st2\",\n            \"date\": \"2020-05-07\",\n            \"address\": \"hamaa\",\n            \"email\": \"0911111112@gmail.com\",\n            \"mobile\": \"0911111112\",\n            \"password\": \"331\",\n            \"the_class\": \"second\",\n            \"parents_job\": \"doctor\",\n            \"parents_name\": \"psn2\",\n            \"user_id\": 13,\n            \"p_student_id\": 2,\n            \"director_id\": 2,\n            \"created_at\": \"2025-08-16T16:25:16.000000Z\",\n            \"updated_at\": \"2025-08-16T16:25:16.000000Z\"\n        },\n        {\n            \"id\": 3,\n            \"firstname\": \"st3\",\n            \"lastname\": \"st3\",\n            \"date\": \"2020-05-09\",\n            \"address\": \"halap\",\n            \"email\": \"0911111113@gmail.com\",\n            \"mobile\": \"0911111113\",\n            \"password\": \"551\",\n            \"the_class\": \"third\",\n            \"parents_job\": \"dentist\",\n            \"parents_name\": \"psn3\",\n            \"user_id\": 14,\n            \"p_student_id\": 3,\n            \"director_id\": 4,\n            \"created_at\": \"2025-08-16T16:25:16.000000Z\",\n            \"updated_at\": \"2025-08-16T16:25:16.000000Z\"\n        },\n        {\n            \"id\": 4,\n            \"firstname\": \"st4\",\n            \"lastname\": \"st4\",\n            \"date\": \"2020-05-11\",\n            \"address\": \"homs\",\n            \"email\": \"0911111114@gmail.com\",\n            \"mobile\": \"0911111114\",\n            \"password\": \"771\",\n            \"the_class\": \"fourth\",\n            \"parents_job\": \"physical\",\n            \"parents_name\": \"psn4\",\n            \"user_id\": 15,\n            \"p_student_id\": 4,\n            \"director_id\": 5,\n            \"created_at\": \"2025-08-16T16:25:16.000000Z\",\n            \"updated_at\": \"2025-08-16T16:25:16.000000Z\"\n        },\n        {\n            \"id\": 5,\n            \"firstname\": \"st5\",\n            \"lastname\": \"st5\",\n            \"date\": \"2020-05-13\",\n            \"address\": \"idlibe\",\n            \"email\": \"0911111115@gmail.com\",\n            \"mobile\": \"0911111115\",\n            \"password\": \"991\",\n            \"the_class\": \"fifth\",\n            \"parents_job\": \"factors\",\n            \"parents_name\": \"psn5\",\n            \"user_id\": 16,\n            \"p_student_id\": 5,\n            \"director_id\": 3,\n            \"created_at\": \"2025-08-16T16:25:16.000000Z\",\n            \"updated_at\": \"2025-08-16T16:25:16.000000Z\"\n        },\n        {\n            \"id\": 6,\n            \"firstname\": \"stsssd\",\n            \"lastname\": \"st1sd\",\n            \"date\": \"2010-05-05\",\n            \"address\": \"m\",\n            \"email\": \"st@gmail.com\",\n            \"mobile\": \"0991452080\",\n            \"password\": \"01\",\n            \"the_class\": \"first\",\n            \"parents_job\": \"d\",\n            \"parents_name\": \"ps1\",\n            \"user_id\": 11,\n            \"p_student_id\": 5,\n            \"director_id\": 2,\n            \"created_at\": \"2025-08-16T20:59:52.000000Z\",\n            \"updated_at\": \"2025-08-16T20:59:52.000000Z\"\n        }\n    ],\n    \"message\": \" The students \"\n}"
+				}
+			]
+		},
+		{
+			"name": "show user",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "1|RnstXGmz9eAmdPo6GGPylYFYSURKIDWd4lEUiazH7c2c5fb6",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8000/api/user/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"user",
+						"4"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "access",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/user/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"user",
+								"4"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 18 Aug 2025 00:21:44 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 18 Aug 2025 00:21:44 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.4"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"data\": [\n        {\n            \"id\": 4,\n            \"role\": \"director\",\n            \"email\": \"0977777773@gmail.com\",\n            \"created_at\": \"2025-08-18T00:11:43.000000Z\",\n            \"updated_at\": \"2025-08-18T00:11:43.000000Z\"\n        }\n    ],\n    \"message\": \" The details of the student \"\n}"
+				}
+			]
+		},
+		{
+			"name": "show_student_details",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "5|Y4g0QVGPDVsVS1we4aRFWza5J93UssPU924Y0Ccscab80467",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8000/api/show_student_details/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"show_student_details",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "index_students Copy",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/show_student_details/5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"show_student_details",
+								"5"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "",
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 16 Aug 2025 21:21:07 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 16 Aug 2025 21:21:07 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.4"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [
+						{
+							"expires": "Invalid Date"
+						}
+					],
+					"body": "{\n    \"success\": true,\n    \"data\": [\n        {\n            \"id\": 1,\n            \"firstname\": \"st1\",\n            \"lastname\": \"st1\",\n            \"date\": \"2020-05-05\",\n            \"address\": \"damascus\",\n            \"email\": \"0911111111@gmail.com\",\n            \"mobile\": \"0911111111\",\n            \"password\": \"111\",\n            \"the_class\": \"first\",\n            \"parents_job\": \"teacher\",\n            \"parents_name\": \"psn1\",\n            \"user_id\": 12,\n            \"p_student_id\": 1,\n            \"director_id\": 1,\n            \"created_at\": \"2025-08-16T16:25:16.000000Z\",\n            \"updated_at\": \"2025-08-16T16:25:16.000000Z\"\n        }\n    ],\n    \"message\": \" The details of the student \"\n}"
+				}
+			]
+		},
+		{
+			"name": "delete student",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "2|9ZKjxPIf1dxmGh9ug1WWhXLMCzVHOh4PUNMyfN19bbc10840",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8000/api/destroy/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"destroy",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "index_students Copy",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/destroy/{19}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"destroy",
+								"{19}"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 16 Aug 2025 16:22:48 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 16 Aug 2025 16:22:48 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.4"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": false,\n    \"message\": \"الطالب غير موجود\"\n}"
+				},
+				{
+					"name": "should be only director",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/destroy/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"destroy",
+								"3"
+							]
+						}
+					},
+					"status": "Forbidden",
+					"code": 403,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 16 Aug 2025 20:21:52 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 16 Aug 2025 20:21:52 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.4"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Unauthorized\",\n    \"exception\": \"Symfony\\\\Component\\\\HttpKernel\\\\Exception\\\\HttpException\",\n    \"file\": \"C:\\\\xampp1\\\\htdocs\\\\php_course\\\\laravel\\\\3_project\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Application.php\",\n    \"line\": 1425,\n    \"trace\": [\n        {\n            \"file\": \"C:\\\\xampp1\\\\htdocs\\\\php_course\\\\laravel\\\\3_project\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\helpers.php\",\n            \"line\": 50,\n            \"function\": \"abort\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Application\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp1\\\\htdocs\\\\php_course\\\\laravel\\\\3_project\\\\app\\\\Http\\\\Controllers\\\\AuthController.php\",\n            \"line\": 280,\n            \"function\": \"abort\"\n        },\n        {\n            \"file\": \"C:\\\\xampp1\\\\htdocs\\\\php_course\\\\laravel\\\\3_project\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\ControllerDispatcher.php\",\n            \"line\": 46,\n            \"function\": \"destroy\",\n            \"class\": \"App\\\\Http\\\\Controllers\\\\AuthController\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp1\\\\htdocs\\\\php_course\\\\laravel\\\\3_project\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Route.php\",\n            \"line\": 265,\n            \"function\": \"dispatch\",\n            \"class\": \"Illuminate\\\\Routing\\\\ControllerDispatcher\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp1\\\\htdocs\\\\php_course\\\\laravel\\\\3_project\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Route.php\",\n            \"line\": 211,\n            \"function\": \"runController\",\n            \"class\": \"Illuminate\\\\Routing\\\\Route\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp1\\\\htdocs\\\\php_course\\\\laravel\\\\3_project\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Router.php\",\n            \"line\": 808,\n            \"function\": \"run\",\n            \"class\": \"Illuminate\\\\Routing\\\\Route\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp1\\\\htdocs\\\\php_course\\\\laravel\\\\3_project\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 169,\n            \"function\": \"Illuminate\\\\Routing\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Routing\\\\Router\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp1\\\\htdocs\\\\php_course\\\\laravel\\\\3_project\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Middleware\\\\SubstituteBindings.php\",\n            \"line\": 50,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp1\\\\htdocs\\\\php_course\\\\laravel\\\\3_project\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 208,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Routing\\\\Middleware\\\\SubstituteBindings\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp1\\\\htdocs\\\\php_course\\\\laravel\\\\3_project\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Auth\\\\Middleware\\\\Authenticate.php\",\n            \"line\": 63,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp1\\\\htdocs\\\\php_course\\\\laravel\\\\3_project\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 208,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Auth\\\\Middleware\\\\Authenticate\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp1\\\\htdocs\\\\php_course\\\\laravel\\\\3_project\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 126,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp1\\\\htdocs\\\\php_course\\\\laravel\\\\3_project\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Router.php\",\n            \"line\": 807,\n            \"function\": \"then\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp1\\\\htdocs\\\\php_course\\\\laravel\\\\3_project\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Router.php\",\n            \"line\": 786,\n            \"function\": \"runRouteWithinStack\",\n            \"class\": \"Illuminate\\\\Routing\\\\Router\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp1\\\\htdocs\\\\php_course\\\\laravel\\\\3_project\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Router.php\",\n            \"line\": 750,\n            \"function\": \"runRoute\",\n            \"class\": \"Illuminate\\\\Routing\\\\Router\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp1\\\\htdocs\\\\php_course\\\\laravel\\\\3_project\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Router.php\",\n            \"line\": 739,\n            \"function\": \"dispatchToRoute\",\n            \"class\": \"Illuminate\\\\Routing\\\\Router\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp1\\\\htdocs\\\\php_course\\\\laravel\\\\3_project\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Kernel.php\",\n            \"line\": 200,\n            \"function\": \"dispatch\",\n            \"class\": \"Illuminate\\\\Routing\\\\Router\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp1\\\\htdocs\\\\php_course\\\\laravel\\\\3_project\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 169,\n            \"function\": \"Illuminate\\\\Foundation\\\\Http\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Kernel\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp1\\\\htdocs\\\\php_course\\\\laravel\\\\3_project\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\TransformsRequest.php\",\n            \"line\": 21,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp1\\\\htdocs\\\\php_course\\\\laravel\\\\3_project\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\ConvertEmptyStringsToNull.php\",\n            \"line\": 31,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\TransformsRequest\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp1\\\\htdocs\\\\php_course\\\\laravel\\\\3_project\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 208,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\ConvertEmptyStringsToNull\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp1\\\\htdocs\\\\php_course\\\\laravel\\\\3_project\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\TransformsRequest.php\",\n            \"line\": 21,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp1\\\\htdocs\\\\php_course\\\\laravel\\\\3_project\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\TrimStrings.php\",\n            \"line\": 51,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\TransformsRequest\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp1\\\\htdocs\\\\php_course\\\\laravel\\\\3_project\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 208,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\TrimStrings\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp1\\\\htdocs\\\\php_course\\\\laravel\\\\3_project\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Http\\\\Middleware\\\\ValidatePostSize.php\",\n            \"line\": 27,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp1\\\\htdocs\\\\php_course\\\\laravel\\\\3_project\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 208,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Http\\\\Middleware\\\\ValidatePostSize\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp1\\\\htdocs\\\\php_course\\\\laravel\\\\3_project\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\PreventRequestsDuringMaintenance.php\",\n            \"line\": 109,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp1\\\\htdocs\\\\php_course\\\\laravel\\\\3_project\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 208,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\PreventRequestsDuringMaintenance\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp1\\\\htdocs\\\\php_course\\\\laravel\\\\3_project\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Http\\\\Middleware\\\\HandleCors.php\",\n            \"line\": 61,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp1\\\\htdocs\\\\php_course\\\\laravel\\\\3_project\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 208,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Http\\\\Middleware\\\\HandleCors\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp1\\\\htdocs\\\\php_course\\\\laravel\\\\3_project\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Http\\\\Middleware\\\\TrustProxies.php\",\n            \"line\": 58,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp1\\\\htdocs\\\\php_course\\\\laravel\\\\3_project\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 208,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Http\\\\Middleware\\\\TrustProxies\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp1\\\\htdocs\\\\php_course\\\\laravel\\\\3_project\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\InvokeDeferredCallbacks.php\",\n            \"line\": 22,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp1\\\\htdocs\\\\php_course\\\\laravel\\\\3_project\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 208,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\InvokeDeferredCallbacks\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp1\\\\htdocs\\\\php_course\\\\laravel\\\\3_project\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Http\\\\Middleware\\\\ValidatePathEncoding.php\",\n            \"line\": 26,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp1\\\\htdocs\\\\php_course\\\\laravel\\\\3_project\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 208,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Http\\\\Middleware\\\\ValidatePathEncoding\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp1\\\\htdocs\\\\php_course\\\\laravel\\\\3_project\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 126,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp1\\\\htdocs\\\\php_course\\\\laravel\\\\3_project\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Kernel.php\",\n            \"line\": 175,\n            \"function\": \"then\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp1\\\\htdocs\\\\php_course\\\\laravel\\\\3_project\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Kernel.php\",\n            \"line\": 144,\n            \"function\": \"sendRequestThroughRouter\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Kernel\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp1\\\\htdocs\\\\php_course\\\\laravel\\\\3_project\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Application.php\",\n            \"line\": 1219,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Kernel\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp1\\\\htdocs\\\\php_course\\\\laravel\\\\3_project\\\\public\\\\index.php\",\n            \"line\": 20,\n            \"function\": \"handleRequest\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Application\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp1\\\\htdocs\\\\php_course\\\\laravel\\\\3_project\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\resources\\\\server.php\",\n            \"line\": 23,\n            \"function\": \"require_once\"\n        }\n    ]\n}"
+				},
+				{
+					"name": "success",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/destroy/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"destroy",
+								"3"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 16 Aug 2025 21:22:01 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 16 Aug 2025 21:22:01 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.4"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"message\": \"تم حذف الطالب بنجاح\"\n}"
+				}
+			]
+		},
+		{
+			"name": "createAnnouncements",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "2|zVdhHcKWCZ2HEt8hQ5JjBTD2OTLhxFqmomUUSxJKb5fb40d8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "admin_id",
+							"value": "1",
+							"type": "default"
+						},
+						{
+							"key": "body",
+							"value": "سيبدأ الدوام يوم الأحد 5/10",
+							"type": "default"
+						},
+						{
+							"key": "title",
+							"value": "تنبيه ",
+							"type": "text"
+						},
+						{
+							"key": "date",
+							"value": "2025-08-16",
+							"type": "text"
+						},
+						{
+							"key": "the_class_id",
+							"value": "2",
+							"type": "text"
+						},
+						{
+							"key": "announcement_id",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/createAnnouncements",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"createAnnouncements"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": "defrs@dsd",
+							"disabled": true
+						},
+						{
+							"key": "password",
+							"value": "1234",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "should be only admin",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "admin_id",
+									"value": "2",
+									"type": "default"
+								},
+								{
+									"key": "body",
+									"value": "سيبدأ الدوام يوم الأحد 5/10",
+									"type": "default"
+								},
+								{
+									"key": "title",
+									"value": "تنبيه ",
+									"type": "text"
+								},
+								{
+									"key": "date",
+									"value": "16/8/2025",
+									"type": "text"
+								},
+								{
+									"key": "the_class_id",
+									"value": "2",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/createAnnouncements",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"createAnnouncements"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "defrs@dsd",
+									"disabled": true
+								},
+								{
+									"key": "password",
+									"value": "1234",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"status": "Forbidden",
+					"code": 403,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 16 Aug 2025 21:46:52 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 16 Aug 2025 21:46:52 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.4"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Unauthorized\",\n    \"exception\": \"Symfony\\\\Component\\\\HttpKernel\\\\Exception\\\\HttpException\",\n    \"file\": \"C:\\\\xampp1\\\\htdocs\\\\php_course\\\\laravel\\\\3_project\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Application.php\",\n    \"line\": 1425,\n    \"trace\": [\n        {\n            \"file\": \"C:\\\\xampp1\\\\htdocs\\\\php_course\\\\laravel\\\\3_project\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\helpers.php\",\n            \"line\": 50,\n            \"function\": \"abort\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Application\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp1\\\\htdocs\\\\php_course\\\\laravel\\\\3_project\\\\app\\\\Http\\\\Controllers\\\\AdminController.php\",\n            \"line\": 41,\n            \"function\": \"abort\"\n        },\n        {\n            \"file\": \"C:\\\\xampp1\\\\htdocs\\\\php_course\\\\laravel\\\\3_project\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\ControllerDispatcher.php\",\n            \"line\": 46,\n            \"function\": \"createAnnouncements\",\n            \"class\": \"App\\\\Http\\\\Controllers\\\\AdminController\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp1\\\\htdocs\\\\php_course\\\\laravel\\\\3_project\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Route.php\",\n            \"line\": 265,\n            \"function\": \"dispatch\",\n            \"class\": \"Illuminate\\\\Routing\\\\ControllerDispatcher\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp1\\\\htdocs\\\\php_course\\\\laravel\\\\3_project\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Route.php\",\n            \"line\": 211,\n            \"function\": \"runController\",\n            \"class\": \"Illuminate\\\\Routing\\\\Route\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp1\\\\htdocs\\\\php_course\\\\laravel\\\\3_project\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Router.php\",\n            \"line\": 808,\n            \"function\": \"run\",\n            \"class\": \"Illuminate\\\\Routing\\\\Route\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp1\\\\htdocs\\\\php_course\\\\laravel\\\\3_project\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 169,\n            \"function\": \"Illuminate\\\\Routing\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Routing\\\\Router\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp1\\\\htdocs\\\\php_course\\\\laravel\\\\3_project\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Middleware\\\\SubstituteBindings.php\",\n            \"line\": 50,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp1\\\\htdocs\\\\php_course\\\\laravel\\\\3_project\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 208,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Routing\\\\Middleware\\\\SubstituteBindings\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp1\\\\htdocs\\\\php_course\\\\laravel\\\\3_project\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Auth\\\\Middleware\\\\Authenticate.php\",\n            \"line\": 63,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp1\\\\htdocs\\\\php_course\\\\laravel\\\\3_project\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 208,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Auth\\\\Middleware\\\\Authenticate\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp1\\\\htdocs\\\\php_course\\\\laravel\\\\3_project\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 126,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp1\\\\htdocs\\\\php_course\\\\laravel\\\\3_project\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Router.php\",\n            \"line\": 807,\n            \"function\": \"then\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp1\\\\htdocs\\\\php_course\\\\laravel\\\\3_project\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Router.php\",\n            \"line\": 786,\n            \"function\": \"runRouteWithinStack\",\n            \"class\": \"Illuminate\\\\Routing\\\\Router\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp1\\\\htdocs\\\\php_course\\\\laravel\\\\3_project\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Router.php\",\n            \"line\": 750,\n            \"function\": \"runRoute\",\n            \"class\": \"Illuminate\\\\Routing\\\\Router\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp1\\\\htdocs\\\\php_course\\\\laravel\\\\3_project\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Router.php\",\n            \"line\": 739,\n            \"function\": \"dispatchToRoute\",\n            \"class\": \"Illuminate\\\\Routing\\\\Router\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp1\\\\htdocs\\\\php_course\\\\laravel\\\\3_project\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Kernel.php\",\n            \"line\": 200,\n            \"function\": \"dispatch\",\n            \"class\": \"Illuminate\\\\Routing\\\\Router\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp1\\\\htdocs\\\\php_course\\\\laravel\\\\3_project\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 169,\n            \"function\": \"Illuminate\\\\Foundation\\\\Http\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Kernel\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp1\\\\htdocs\\\\php_course\\\\laravel\\\\3_project\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\TransformsRequest.php\",\n            \"line\": 21,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp1\\\\htdocs\\\\php_course\\\\laravel\\\\3_project\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\ConvertEmptyStringsToNull.php\",\n            \"line\": 31,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\TransformsRequest\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp1\\\\htdocs\\\\php_course\\\\laravel\\\\3_project\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 208,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\ConvertEmptyStringsToNull\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp1\\\\htdocs\\\\php_course\\\\laravel\\\\3_project\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\TransformsRequest.php\",\n            \"line\": 21,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp1\\\\htdocs\\\\php_course\\\\laravel\\\\3_project\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\TrimStrings.php\",\n            \"line\": 51,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\TransformsRequest\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp1\\\\htdocs\\\\php_course\\\\laravel\\\\3_project\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 208,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\TrimStrings\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp1\\\\htdocs\\\\php_course\\\\laravel\\\\3_project\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Http\\\\Middleware\\\\ValidatePostSize.php\",\n            \"line\": 27,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp1\\\\htdocs\\\\php_course\\\\laravel\\\\3_project\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 208,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Http\\\\Middleware\\\\ValidatePostSize\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp1\\\\htdocs\\\\php_course\\\\laravel\\\\3_project\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\PreventRequestsDuringMaintenance.php\",\n            \"line\": 109,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp1\\\\htdocs\\\\php_course\\\\laravel\\\\3_project\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 208,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\PreventRequestsDuringMaintenance\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp1\\\\htdocs\\\\php_course\\\\laravel\\\\3_project\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Http\\\\Middleware\\\\HandleCors.php\",\n            \"line\": 61,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp1\\\\htdocs\\\\php_course\\\\laravel\\\\3_project\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 208,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Http\\\\Middleware\\\\HandleCors\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp1\\\\htdocs\\\\php_course\\\\laravel\\\\3_project\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Http\\\\Middleware\\\\TrustProxies.php\",\n            \"line\": 58,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp1\\\\htdocs\\\\php_course\\\\laravel\\\\3_project\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 208,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Http\\\\Middleware\\\\TrustProxies\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp1\\\\htdocs\\\\php_course\\\\laravel\\\\3_project\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\InvokeDeferredCallbacks.php\",\n            \"line\": 22,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp1\\\\htdocs\\\\php_course\\\\laravel\\\\3_project\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 208,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\InvokeDeferredCallbacks\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp1\\\\htdocs\\\\php_course\\\\laravel\\\\3_project\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Http\\\\Middleware\\\\ValidatePathEncoding.php\",\n            \"line\": 26,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp1\\\\htdocs\\\\php_course\\\\laravel\\\\3_project\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 208,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Http\\\\Middleware\\\\ValidatePathEncoding\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp1\\\\htdocs\\\\php_course\\\\laravel\\\\3_project\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 126,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp1\\\\htdocs\\\\php_course\\\\laravel\\\\3_project\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Kernel.php\",\n            \"line\": 175,\n            \"function\": \"then\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp1\\\\htdocs\\\\php_course\\\\laravel\\\\3_project\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Kernel.php\",\n            \"line\": 144,\n            \"function\": \"sendRequestThroughRouter\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Kernel\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp1\\\\htdocs\\\\php_course\\\\laravel\\\\3_project\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Application.php\",\n            \"line\": 1219,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Kernel\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp1\\\\htdocs\\\\php_course\\\\laravel\\\\3_project\\\\public\\\\index.php\",\n            \"line\": 20,\n            \"function\": \"handleRequest\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Application\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp1\\\\htdocs\\\\php_course\\\\laravel\\\\3_project\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\resources\\\\server.php\",\n            \"line\": 23,\n            \"function\": \"require_once\"\n        }\n    ]\n}"
+				},
+				{
+					"name": "access",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "admin_id",
+									"value": "1",
+									"type": "default"
+								},
+								{
+									"key": "body",
+									"value": "سيبدأ الدوام يوم الأحد 5/10",
+									"type": "default"
+								},
+								{
+									"key": "title",
+									"value": "تنبيه ",
+									"type": "text"
+								},
+								{
+									"key": "date",
+									"value": "2025-08-16",
+									"type": "text"
+								},
+								{
+									"key": "the_class_id",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "announcement_id",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/createAnnouncements",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"createAnnouncements"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "defrs@dsd",
+									"disabled": true
+								},
+								{
+									"key": "password",
+									"value": "1234",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 18 Aug 2025 00:56:08 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 18 Aug 2025 00:56:08 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.4"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"message\": \"تم إضافة الإعلان بنجاح\",\n    \"data\": {\n        \"admin_id\": \"1\",\n        \"date\": \"2025-08-16\",\n        \"body\": \"سيبدأ الدوام يوم الأحد 5/10\",\n        \"title\": \"تنبيه\",\n        \"updated_at\": \"2025-08-18T00:56:08.000000Z\",\n        \"created_at\": \"2025-08-18T00:56:08.000000Z\",\n        \"id\": 4\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "index_Ann",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "2|zVdhHcKWCZ2HEt8hQ5JjBTD2OTLhxFqmomUUSxJKb5fb40d8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/index_Ann",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"index_Ann"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": "defrs@dsd",
+							"disabled": true
+						},
+						{
+							"key": "password",
+							"value": "1234",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "SUCCESS",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/index_Ann",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"index_Ann"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "defrs@dsd",
+									"disabled": true
+								},
+								{
+									"key": "password",
+									"value": "1234",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 18 Aug 2025 01:03:09 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 18 Aug 2025 01:03:09 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.4"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"data\": [\n        {\n            \"id\": 1,\n            \"the_class_id\": 1,\n            \"announcement_id\": 1,\n            \"created_at\": \"2025-08-18T00:11:50.000000Z\",\n            \"updated_at\": \"2025-08-18T00:11:50.000000Z\",\n            \"announcement\": {\n                \"id\": 1,\n                \"date\": \"2024-05-05\",\n                \"title\": \"نصائح\",\n                \"body\": \"واستغلوا أوقاتكم\",\n                \"admin_id\": 1,\n                \"created_at\": \"2025-08-18T00:11:50.000000Z\",\n                \"updated_at\": \"2025-08-18T00:11:50.000000Z\"\n            },\n            \"the_class\": {\n                \"id\": 1,\n                \"name\": \"first\",\n                \"created_at\": \"2025-08-18T00:11:50.000000Z\",\n                \"updated_at\": \"2025-08-18T00:11:50.000000Z\"\n            }\n        },\n        {\n            \"id\": 2,\n            \"the_class_id\": 2,\n            \"announcement_id\": 2,\n            \"created_at\": \"2025-08-18T00:11:50.000000Z\",\n            \"updated_at\": \"2025-08-18T00:11:50.000000Z\",\n            \"announcement\": {\n                \"id\": 2,\n                \"date\": \"2024-05-07\",\n                \"title\": \"طرق النجاح \",\n                \"body\": \"بروا أمهاتكم وآبائكم\",\n                \"admin_id\": 1,\n                \"created_at\": \"2025-08-18T00:11:50.000000Z\",\n                \"updated_at\": \"2025-08-18T00:11:50.000000Z\"\n            },\n            \"the_class\": {\n                \"id\": 2,\n                \"name\": \"second\",\n                \"created_at\": \"2025-08-18T00:11:50.000000Z\",\n                \"updated_at\": \"2025-08-18T00:11:50.000000Z\"\n            }\n        },\n        {\n            \"id\": 3,\n            \"the_class_id\": 3,\n            \"announcement_id\": 3,\n            \"created_at\": \"2025-08-18T00:11:50.000000Z\",\n            \"updated_at\": \"2025-08-18T00:11:50.000000Z\",\n            \"announcement\": {\n                \"id\": 3,\n                \"date\": \"2024-05-09\",\n                \"title\": \" تاريخ برنامج الامتحانات \",\n                \"body\": \"2025\\\\5\\\\5\",\n                \"admin_id\": 1,\n                \"created_at\": \"2025-08-18T00:11:50.000000Z\",\n                \"updated_at\": \"2025-08-18T00:11:50.000000Z\"\n            },\n            \"the_class\": {\n                \"id\": 3,\n                \"name\": \"third\",\n                \"created_at\": \"2025-08-18T00:11:50.000000Z\",\n                \"updated_at\": \"2025-08-18T00:11:50.000000Z\"\n            }\n        },\n        {\n            \"id\": 4,\n            \"the_class_id\": 2,\n            \"announcement_id\": 4,\n            \"created_at\": \"2025-08-18T00:56:08.000000Z\",\n            \"updated_at\": \"2025-08-18T00:56:08.000000Z\",\n            \"announcement\": {\n                \"id\": 4,\n                \"date\": \"2025-08-16\",\n                \"title\": \"تنبيه\",\n                \"body\": \"سيبدأ الدوام يوم الأحد 5/10\",\n                \"admin_id\": 1,\n                \"created_at\": \"2025-08-18T00:56:08.000000Z\",\n                \"updated_at\": \"2025-08-18T00:56:08.000000Z\"\n            },\n            \"the_class\": {\n                \"id\": 2,\n                \"name\": \"second\",\n                \"created_at\": \"2025-08-18T00:11:50.000000Z\",\n                \"updated_at\": \"2025-08-18T00:11:50.000000Z\"\n            }\n        }\n    ],\n    \"message\": \"جميع الإعلانات تم جلبها بنجاح\"\n}"
+				}
+			]
+		},
+		{
+			"name": "addMark",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "1|TAXsGL3SjH6e7hvL6c5ac8xXxkMvMaYWLhg7js1Nbdea6248",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "student_id",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "subject_id",
+							"value": "2",
+							"type": "text"
+						},
+						{
+							"key": "the_class_id",
+							"value": "4",
+							"type": "text"
+						},
+						{
+							"key": "director_id",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "mark",
+							"value": "5",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/addMark",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"addMark"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": "defrs@dsd",
+							"disabled": true
+						},
+						{
+							"key": "password",
+							"value": "1234",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "student_id",
+									"value": "3",
+									"type": "text"
+								},
+								{
+									"key": "subject_id",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "the_class_id",
+									"value": "4",
+									"type": "text"
+								},
+								{
+									"key": "director_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "mark",
+									"value": "5",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/addMark",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"addMark"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "defrs@dsd",
+									"disabled": true
+								},
+								{
+									"key": "password",
+									"value": "1234",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 17 Aug 2025 15:22:17 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 17 Aug 2025 15:22:17 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.4"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"data\": {\n        \"student_id\": \"4\",\n        \"subject_id\": \"4\",\n        \"the_class_id\": \"1\",\n        \"director_id\": \"3\",\n        \"mark\": \"5\",\n        \"updated_at\": \"2025-08-17T15:22:17.000000Z\",\n        \"created_at\": \"2025-08-17T15:22:17.000000Z\",\n        \"id\": 4\n    },\n    \"message\": \"تمت إضافة العلامة بنجاح\"\n}"
+				},
+				{
+					"name": "لا تكرر تسجيل العلامة لنفس الطالب ونفس المادة ونفس الصف",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "student_id",
+									"value": "3",
+									"type": "text"
+								},
+								{
+									"key": "subject_id",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "the_class_id",
+									"value": "4",
+									"type": "text"
+								},
+								{
+									"key": "director_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "mark",
+									"value": "5",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/addMark",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"addMark"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "defrs@dsd",
+									"disabled": true
+								},
+								{
+									"key": "password",
+									"value": "1234",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"status": "Conflict",
+					"code": 409,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 17 Aug 2025 23:06:53 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 17 Aug 2025 23:06:53 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.4"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": false,\n    \"message\": \"تم تسجيل علامة لهذا الطالب في هذه المادة وهذا الصف من قبل.\"\n}"
+				}
+			]
+		},
+		{
+			"name": "get marks",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "1|gQt0bguaRi8qim4r51RJYOdNHYOz1McsVcLEGUTcfd636ccc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8000/api/getMarks/1/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"getMarks",
+						"1",
+						"2"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "اذا غير موجودة صف مع المادة",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/getMarks/1/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"getMarks",
+								"1",
+								"1"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 17 Aug 2025 22:40:50 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 17 Aug 2025 22:40:50 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.4"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": false,\n    \"message\": \"لا يوجد علامات لهذا الصف مع هذه المادة\"\n}"
+				},
+				{
+					"name": "success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/getMarks/1/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"getMarks",
+								"1",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 17 Aug 2025 23:31:03 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 17 Aug 2025 23:31:03 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.4"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"data\": [\n        {\n            \"id\": 1,\n            \"director_id\": 1,\n            \"student_id\": 1,\n            \"the_class_id\": 1,\n            \"subject_id\": 1,\n            \"mark\": \"90\",\n            \"created_at\": \"2025-08-17T23:29:31.000000Z\",\n            \"updated_at\": \"2025-08-17T23:29:31.000000Z\",\n            \"student\": {\n                \"id\": 1,\n                \"firstname\": \"st1\",\n                \"lastname\": \"st1\",\n                \"date\": \"2020-05-05\",\n                \"address\": \"damascus\",\n                \"email\": \"0911111111@gmail.com\",\n                \"mobile\": \"0911111111\",\n                \"password\": \"111\",\n                \"the_class\": \"first\",\n                \"parents_job\": \"teacher\",\n                \"parents_name\": \"psn1\",\n                \"user_id\": 12,\n                \"p_student_id\": 1,\n                \"director_id\": 1,\n                \"created_at\": \"2025-08-17T23:29:30.000000Z\",\n                \"updated_at\": \"2025-08-17T23:29:30.000000Z\"\n            }\n        },\n        {\n            \"id\": 2,\n            \"director_id\": 2,\n            \"student_id\": 2,\n            \"the_class_id\": 1,\n            \"subject_id\": 1,\n            \"mark\": \"50\",\n            \"created_at\": \"2025-08-17T23:29:31.000000Z\",\n            \"updated_at\": \"2025-08-17T23:29:31.000000Z\",\n            \"student\": {\n                \"id\": 2,\n                \"firstname\": \"st2\",\n                \"lastname\": \"st2\",\n                \"date\": \"2020-05-07\",\n                \"address\": \"hamaa\",\n                \"email\": \"0911111112@gmail.com\",\n                \"mobile\": \"0911111112\",\n                \"password\": \"331\",\n                \"the_class\": \"second\",\n                \"parents_job\": \"doctor\",\n                \"parents_name\": \"psn2\",\n                \"user_id\": 13,\n                \"p_student_id\": 2,\n                \"director_id\": 2,\n                \"created_at\": \"2025-08-17T23:29:30.000000Z\",\n                \"updated_at\": \"2025-08-17T23:29:30.000000Z\"\n            }\n        },\n        {\n            \"id\": 3,\n            \"director_id\": 2,\n            \"student_id\": 3,\n            \"the_class_id\": 1,\n            \"subject_id\": 1,\n            \"mark\": \"70\",\n            \"created_at\": \"2025-08-17T23:29:31.000000Z\",\n            \"updated_at\": \"2025-08-17T23:29:31.000000Z\",\n            \"student\": {\n                \"id\": 3,\n                \"firstname\": \"st3\",\n                \"lastname\": \"st3\",\n                \"date\": \"2020-05-09\",\n                \"address\": \"halap\",\n                \"email\": \"0911111113@gmail.com\",\n                \"mobile\": \"0911111113\",\n                \"password\": \"551\",\n                \"the_class\": \"third\",\n                \"parents_job\": \"dentist\",\n                \"parents_name\": \"psn3\",\n                \"user_id\": 14,\n                \"p_student_id\": 3,\n                \"director_id\": 4,\n                \"created_at\": \"2025-08-17T23:29:30.000000Z\",\n                \"updated_at\": \"2025-08-17T23:29:30.000000Z\"\n            }\n        }\n    ],\n    \"message\": \"تم جلب العلامات بنجاح\"\n}"
+				},
+				{
+					"name": "success العلمات دون تفاصيل الطالب",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/getMarks/1/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"getMarks",
+								"1",
+								"2"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 17 Aug 2025 23:42:26 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 17 Aug 2025 23:42:26 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.4"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"data\": [\n        {\n            \"id\": 7,\n            \"director_id\": 2,\n            \"student_id\": 1,\n            \"the_class_id\": 1,\n            \"subject_id\": 2,\n            \"mark\": \"100\",\n            \"created_at\": \"2025-08-17T23:32:48.000000Z\",\n            \"updated_at\": \"2025-08-17T23:32:48.000000Z\"\n        },\n        {\n            \"id\": 8,\n            \"director_id\": 2,\n            \"student_id\": 2,\n            \"the_class_id\": 1,\n            \"subject_id\": 2,\n            \"mark\": \"98\",\n            \"created_at\": \"2025-08-17T23:32:48.000000Z\",\n            \"updated_at\": \"2025-08-17T23:32:48.000000Z\"\n        },\n        {\n            \"id\": 9,\n            \"director_id\": 2,\n            \"student_id\": 3,\n            \"the_class_id\": 1,\n            \"subject_id\": 2,\n            \"mark\": \"89\",\n            \"created_at\": \"2025-08-17T23:32:48.000000Z\",\n            \"updated_at\": \"2025-08-17T23:32:48.000000Z\"\n        }\n    ],\n    \"message\": \"تم جلب العلامات بنجاح\"\n}"
+				}
+			]
+		},
+		{
+			"name": "getStudentDetailsByMark",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "1|gQt0bguaRi8qim4r51RJYOdNHYOz1McsVcLEGUTcfd636ccc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8000/api/getStudentDetailsByMark/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"getStudentDetailsByMark",
+						"3"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/getStudentDetailsByMark/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"getStudentDetailsByMark",
+								"3"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 17 Aug 2025 23:48:30 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 17 Aug 2025 23:48:30 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.4"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"student\": {\n        \"id\": 3,\n        \"firstname\": \"st3\",\n        \"lastname\": \"st3\",\n        \"date\": \"2020-05-09\",\n        \"address\": \"halap\",\n        \"email\": \"0911111113@gmail.com\",\n        \"mobile\": \"0911111113\",\n        \"password\": \"551\",\n        \"the_class\": \"third\",\n        \"parents_job\": \"dentist\",\n        \"parents_name\": \"psn3\",\n        \"user_id\": 14,\n        \"p_student_id\": 3,\n        \"director_id\": 4,\n        \"created_at\": \"2025-08-17T23:32:47.000000Z\",\n        \"updated_at\": \"2025-08-17T23:32:47.000000Z\"\n    },\n    \"mark\": \"70\",\n    \"message\": \"تم جلب تفاصيل الطالب بنجاح\"\n}"
+				}
+			]
+		}
+	]
+}
