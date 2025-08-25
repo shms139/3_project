@@ -93,14 +93,18 @@ class AuthController extends Controller
         $user = [];
         $user = User::where("id", $id)->get();
         //    dd($produ);
+        if ($user->isEmpty()) {
+            return response()->json([
+                'success' => false,
+                'message' => 'لم يتم العثور على المستخدم'
+            ], 404);
+        }
         return response()->json([  //$this->sendResponse($produ,200);
             'success' => true,
             'data' => $user,
-            'message' => " The details of the student ",
+            'message' => " The details of the user ",
         ]);
     }
-
-
 
 //        // إعادة التوجيه مع رسالة نجاح
 //        return redirect()->route('students.index')->with('success', 'تم حذف الطالب بنجاح');

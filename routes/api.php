@@ -28,6 +28,9 @@ Route::middleware('auth:sanctum')->group(function (){
     Route::get('/getStudentDetailsByMark/{markId}',[DirectorController::class,"getStudentDetailsByMark"]);
     Route::post('/weeklyPrograms', [DirectorController::class, 'storeWeeklyProgram']);
     Route::get('/indexWeeklyPrograms',[DirectorController::class,"indexWeeklyPrograms"]);
+    Route::post('/store_check', [DirectorController::class, 'store_check']);
+    Route::get('/index_check',[DirectorController::class,"index_check"]);
+
 
 });
 Route::get('/user', function (Request $request) {

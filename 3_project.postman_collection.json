@@ -1301,7 +1301,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "4|mNL9vpZL1OGftERis3yB57Z3bLuqK4GvfmVbBExd4c3fd60e",
+							"value": "1|5rCiN3gccOm2FjUcO3NCi4ZtuAY6fbaHKlN0Jl96d31bdedc",
 							"type": "string"
 						}
 					]
@@ -3264,7 +3264,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "1|g0waqM6J1FlmKYmjXG6o5q6KeNufybARHyXMOcZy2ad2cfdb",
+							"value": "1|5rCiN3gccOm2FjUcO3NCi4ZtuAY6fbaHKlN0Jl96d31bdedc",
 							"type": "string"
 						}
 					]
@@ -3530,6 +3530,646 @@
 					],
 					"cookie": [],
 					"body": "{\n    \"success\": true,\n    \"message\": \"تم جلب البرامج الأسبوعية بنجاح\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"director_id\": 1,\n            \"the_class_id\": 1,\n            \"program_image\": \"images/default.jpg\",\n            \"created_at\": \"2025-08-21T13:15:25.000000Z\",\n            \"updated_at\": \"2025-08-21T13:15:25.000000Z\",\n            \"program_image_url\": \"http://localhost:8000/storage/images/default.jpg\"\n        },\n        {\n            \"id\": 2,\n            \"director_id\": 3,\n            \"the_class_id\": 2,\n            \"program_image\": \"images/default.jpg\",\n            \"created_at\": \"2025-08-21T13:15:25.000000Z\",\n            \"updated_at\": \"2025-08-21T13:15:25.000000Z\",\n            \"program_image_url\": \"http://localhost:8000/storage/images/default.jpg\"\n        },\n        {\n            \"id\": 3,\n            \"director_id\": 5,\n            \"the_class_id\": 3,\n            \"program_image\": \"images/default.jpg\",\n            \"created_at\": \"2025-08-21T13:15:25.000000Z\",\n            \"updated_at\": \"2025-08-21T13:15:25.000000Z\",\n            \"program_image_url\": \"http://localhost:8000/storage/images/default.jpg\"\n        },\n        {\n            \"id\": 4,\n            \"director_id\": 1,\n            \"the_class_id\": 1,\n            \"program_image\": \"images/default.jpg\",\n            \"created_at\": \"2025-08-21T13:15:25.000000Z\",\n            \"updated_at\": \"2025-08-21T13:15:25.000000Z\",\n            \"program_image_url\": \"http://localhost:8000/storage/images/default.jpg\"\n        },\n        {\n            \"id\": 5,\n            \"director_id\": 3,\n            \"the_class_id\": 2,\n            \"program_image\": \"images/default.jpg\",\n            \"created_at\": \"2025-08-21T13:15:25.000000Z\",\n            \"updated_at\": \"2025-08-21T13:15:25.000000Z\",\n            \"program_image_url\": \"http://localhost:8000/storage/images/default.jpg\"\n        },\n        {\n            \"id\": 6,\n            \"director_id\": 5,\n            \"the_class_id\": 3,\n            \"program_image\": \"images/default.jpg\",\n            \"created_at\": \"2025-08-21T13:15:25.000000Z\",\n            \"updated_at\": \"2025-08-21T13:15:25.000000Z\",\n            \"program_image_url\": \"http://localhost:8000/storage/images/default.jpg\"\n        },\n        {\n            \"id\": 7,\n            \"director_id\": 1,\n            \"the_class_id\": 1,\n            \"program_image\": \"صور/KtN8aja8a8n1wRmtpzBpxdlbsjwJJtrAxpkEUeXP.jpg\",\n            \"created_at\": \"2025-08-21T13:17:11.000000Z\",\n            \"updated_at\": \"2025-08-21T13:17:11.000000Z\",\n            \"program_image_url\": \"http://localhost:8000/storage/صور/KtN8aja8a8n1wRmtpzBpxdlbsjwJJtrAxpkEUeXP.jpg\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "show details user",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "1|g0waqM6J1FlmKYmjXG6o5q6KeNufybARHyXMOcZy2ad2cfdb",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/user/22",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"user",
+						"22"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "director",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/user/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"user",
+								"4"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 24 Aug 2025 19:17:39 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 24 Aug 2025 19:17:39 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.4"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"data\": [\n        {\n            \"id\": 4,\n            \"role\": \"director\",\n            \"email\": \"0977777773@gmail.com\",\n            \"created_at\": \"2025-08-21T13:15:21.000000Z\",\n            \"updated_at\": \"2025-08-21T13:15:21.000000Z\"\n        }\n    ],\n    \"message\": \" The details of the user \"\n}"
+				},
+				{
+					"name": "student",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/user/15",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"user",
+								"15"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 24 Aug 2025 19:18:14 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 24 Aug 2025 19:18:14 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.4"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"data\": [\n        {\n            \"id\": 15,\n            \"role\": \"student\",\n            \"email\": \"0911111114@gmail.com\",\n            \"created_at\": \"2025-08-21T13:15:24.000000Z\",\n            \"updated_at\": \"2025-08-21T13:15:24.000000Z\"\n        }\n    ],\n    \"message\": \" The details of the user \"\n}"
+				},
+				{
+					"name": "if id is empty",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/user/22",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"user",
+								"22"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 24 Aug 2025 19:21:24 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 24 Aug 2025 19:21:24 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.4"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": false,\n    \"message\": \"لم يتم العثور على المستخدم\"\n}"
+				}
+			]
+		},
+		{
+			"name": "store_check",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "1|5rCiN3gccOm2FjUcO3NCi4ZtuAY6fbaHKlN0Jl96d31bdedc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "date",
+							"value": "2-1-2020",
+							"type": "text"
+						},
+						{
+							"key": "student_id",
+							"value": "5",
+							"type": "text"
+						},
+						{
+							"key": "director_id",
+							"value": "3",
+							"type": "text"
+						},
+						{
+							"key": "status",
+							"value": "متأخر",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/store_check",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"store_check"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": "defrs@dsd",
+							"disabled": true
+						},
+						{
+							"key": "password",
+							"value": "1234",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "success حاضر",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "date",
+									"value": "2-1-2020",
+									"type": "text"
+								},
+								{
+									"key": "student_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "director_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "status",
+									"value": "حاضر",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/store_check",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"store_check"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "defrs@dsd",
+									"disabled": true
+								},
+								{
+									"key": "password",
+									"value": "1234",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 24 Aug 2025 20:19:21 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 24 Aug 2025 20:19:21 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.4"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"message\": \"تم حفظ التفقد بنجاح\",\n    \"data\": {\n        \"student_id\": \"1\",\n        \"director_id\": \"1\",\n        \"date\": \"2020-01-02\",\n        \"status\": \"حاضر\",\n        \"updated_at\": \"2025-08-24T20:19:21.000000Z\",\n        \"created_at\": \"2025-08-24T20:19:21.000000Z\",\n        \"id\": 6\n    }\n}"
+				},
+				{
+					"name": "success متأخر",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "date",
+									"value": "2-1-2020",
+									"type": "text"
+								},
+								{
+									"key": "student_id",
+									"value": "5",
+									"type": "text"
+								},
+								{
+									"key": "director_id",
+									"value": "3",
+									"type": "text"
+								},
+								{
+									"key": "status",
+									"value": "متأخر",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/store_check",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"store_check"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "defrs@dsd",
+									"disabled": true
+								},
+								{
+									"key": "password",
+									"value": "1234",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 24 Aug 2025 20:21:59 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 24 Aug 2025 20:21:59 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.4"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"message\": \"تم حفظ التفقد بنجاح\",\n    \"data\": {\n        \"student_id\": \"5\",\n        \"director_id\": \"3\",\n        \"date\": \"2020-01-02\",\n        \"status\": \"متأخر\",\n        \"updated_at\": \"2025-08-24T20:21:59.000000Z\",\n        \"created_at\": \"2025-08-24T20:21:59.000000Z\",\n        \"id\": 7\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "index_check",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "1|5rCiN3gccOm2FjUcO3NCi4ZtuAY6fbaHKlN0Jl96d31bdedc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/index_check",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"index_check"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/index_check",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"index_check"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 24 Aug 2025 20:29:02 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 24 Aug 2025 20:29:02 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.4"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"message\": \"تم جلب التفقد بنجاح\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"director_id\": 1,\n            \"student_id\": 1,\n            \"date\": \"2012-02-02\",\n            \"status\": \"حاضر\",\n            \"created_at\": \"2025-08-24T20:10:07.000000Z\",\n            \"updated_at\": \"2025-08-24T20:10:07.000000Z\"\n        },\n        {\n            \"id\": 2,\n            \"director_id\": 2,\n            \"student_id\": 2,\n            \"date\": \"2012-01-01\",\n            \"status\": \"غائب\",\n            \"created_at\": \"2025-08-24T20:10:07.000000Z\",\n            \"updated_at\": \"2025-08-24T20:10:07.000000Z\"\n        },\n        {\n            \"id\": 3,\n            \"director_id\": 3,\n            \"student_id\": 3,\n            \"date\": \"2013-02-03\",\n            \"status\": \"متأخر\",\n            \"created_at\": \"2025-08-24T20:10:07.000000Z\",\n            \"updated_at\": \"2025-08-24T20:10:07.000000Z\"\n        },\n        {\n            \"id\": 4,\n            \"director_id\": 1,\n            \"student_id\": 1,\n            \"date\": \"2020-01-02\",\n            \"status\": \"حاضر\",\n            \"created_at\": \"2025-08-24T20:13:59.000000Z\",\n            \"updated_at\": \"2025-08-24T20:13:59.000000Z\"\n        },\n        {\n            \"id\": 5,\n            \"director_id\": 1,\n            \"student_id\": 1,\n            \"date\": \"2020-01-02\",\n            \"status\": \"حاضر\",\n            \"created_at\": \"2025-08-24T20:19:11.000000Z\",\n            \"updated_at\": \"2025-08-24T20:19:11.000000Z\"\n        },\n        {\n            \"id\": 6,\n            \"director_id\": 1,\n            \"student_id\": 1,\n            \"date\": \"2020-01-02\",\n            \"status\": \"حاضر\",\n            \"created_at\": \"2025-08-24T20:19:21.000000Z\",\n            \"updated_at\": \"2025-08-24T20:19:21.000000Z\"\n        },\n        {\n            \"id\": 7,\n            \"director_id\": 3,\n            \"student_id\": 5,\n            \"date\": \"2020-01-02\",\n            \"status\": \"متأخر\",\n            \"created_at\": \"2025-08-24T20:21:59.000000Z\",\n            \"updated_at\": \"2025-08-24T20:21:59.000000Z\"\n        }\n    ]\n}"
 				}
 			]
 		}

@@ -16,14 +16,14 @@ class CheckSeeder extends Seeder
         $pr5 = ['1', '2', '3'];
         $pr4 = ['1', '2', '3'];
         $pr3 = ['2012/2/2', '2012/1/1', '2013/2/3'];
-        $pr2 = ['1', '1', '0'];
+        $pr2 = ['حاضر', 'غائب', 'متأخر'];
 
         for ($i = 0; $i < 3; $i++) {
             Check::query()->create([
                 'student_id' => $pr5[$i],
                 'director_id' => $pr4[$i],
                 'date' => $pr3[$i],
-                'check' => $pr2[$i],
+                'status' => $pr2[$i],
             ]);
         }
     }

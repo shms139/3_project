@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Check;
 use App\Models\Director;
 use App\Models\Director_PStudent;
 use App\Models\Mark;
@@ -9,6 +10,7 @@ use App\Models\P_student;
 use App\Models\Student;
 use App\Models\User;
 use App\Models\WeeklyProgram;
+use Carbon\Carbon;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 
@@ -100,7 +102,7 @@ class DirectorController extends Controller
         if (auth()->user()->role !== 'director') {
             abort(403, 'Unauthorized');
         }
-        $request->validate([
+        $validated =   $request->validate([
             'firstname' => ['required', 'string', 'max:10'],
             'lastname' => ['required', 'string', 'max:10'],
             'address' => ['required', 'string'],
@@ -117,6 +119,15 @@ class DirectorController extends Controller
         ], [
             'mobile.unique' => "رقم الموبايل موجود مسبقاً",
         ]);
+        $formats = ['Y-m-d', 'd-m-Y', 'd/m/Y'];// هذا بالبوستمان كيف ما بعتت التاريخ يقبله
+        foreach ($formats as $format) {
+            try {
+                $validated['date'] = Carbon::createFromFormat($format, $validated['date'])->format('Y-m-d');
+                break;
+            } catch (\Exception $e) {
+                // تجاهل وحاول بالصيغة التالية
+            }
+        }
 
         $user = Student::query()->create([
             'firstname' => $request['firstname'],
@@ -252,8 +263,6 @@ class DirectorController extends Controller
             ->where('subject_id', $subjectId)
             ->get();
 
-
-
         if ($marks->isEmpty()) {
             return response()->json([
                 'success' => false,
@@ -292,11 +301,20 @@ class DirectorController extends Controller
         if (auth()->user()->role !== 'director') {
             abort(403, 'Unauthorized');
         }
-        $request->validate([
+        $validated =  $request->validate([
             'director_id' => 'required|exists:directors,id',
             'the_class_id' => 'required|exists:the_classes,id',
             'program_image' => 'required|image|mimes:jpg,jpeg,png|max:2048', // صورة فقط
         ]);
+        $formats = ['Y-m-d', 'd-m-Y', 'd/m/Y'];// هذا بالبوستمان كيف ما بعتت التاريخ يقبله
+        foreach ($formats as $format) {
+            try {
+                $validated['date'] = Carbon::createFromFormat($format, $validated['date'])->format('Y-m-d');
+                break;
+            } catch (\Exception $e) {
+                // تجاهل وحاول بالصيغة التالية
+            }
+        }
 
         // رفع الصورة وتخزينها
         $imagePath = $request->file('program_image')->store('صور', 'public');
@@ -327,5 +345,66 @@ class DirectorController extends Controller
             'data' => $programs
         ]);
     }
+
+    // حفظ التفقد
+    public function store_check(Request $request): JsonResponse
+    {
+        if (auth()->user()->role !== 'director') {
+        abort(403, 'Unauthorized');
+        }
+        $validated = $request->validate([
+            'student_id' => 'required|exists:students,id',
+            'director_id'  => 'required|exists:directors,id',
+            'date'       => 'required|date',
+            'status'     => 'required|in:حاضر,غائب,متأخر',
+        ]);
+
+        $formats = ['Y-m-d', 'd-m-Y', 'd/m/Y'];// هذا بالبوستمان كيف ما بعتت التاريخ يقبله
+        foreach ($formats as $format) {
+            try {
+                $validated['date'] = Carbon::createFromFormat($format, $validated['date'])->format('Y-m-d');
+                break;
+            } catch (\Exception $e) {
+                // تجاهل وحاول بالصيغة التالية
+            }
+        }
+
+        $check =  Check::create($validated);
+
+        return response()->json([
+            'success' => true,
+            'message' => 'تم حفظ التفقد بنجاح',
+            'data' => $check,
+        ]);
+    }
+
+    // عرض التفقد
+    public function index_check(Request $request): JsonResponse
+    {
+        $query = Check::query();
+        if (!$query) {// check accept !$query but get function not accepy ! but accepy isEmpty()
+            return response()->json([
+                'success' => false,
+                'message' => 'لا يوجد تفقد لهذه الصف'
+            ], 404);
+        }
+
+        if ($request->has('date')) {
+            $query->where('date', $request->date);
+        }
+
+        if ($request->has('director_id')) {
+            $query->where('mentor_id', $request->director_id);
+        }
+
+        $records = $query->get();
+
+        return response()->json([
+            'success' => true,
+            'message' => 'تم جلب التفقد بنجاح',
+            'data' => $records
+        ]);
+    }
+
 
 }

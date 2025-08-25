@@ -16,7 +16,7 @@ return new class extends Migration
             $table->foreignId('director_id')->constrained()->cascadeOnUpdate()->cascadeOnDelete();
             $table->foreignId('student_id')->constrained()->cascadeOnUpdate()->cascadeOnDelete();
             $table->date('date');//->default("images/default.jpg");
-            $table->boolean('check');
+            $table->enum('status', ['حاضر', 'غائب', 'متأخر'])->default('حاضر');
             $table->timestamps();
         });
     }
