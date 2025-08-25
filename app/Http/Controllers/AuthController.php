@@ -89,16 +89,28 @@ class AuthController extends Controller
 
     public function user($id): JsonResponse
     {
-
         $user = [];
-        $user = User::where("id", $id)->get();
-        //    dd($produ);
-        if ($user->isEmpty()) {
+       //$user = Auth::user()->load('student');
+      //$user = User::with('student')->find($id);
+        $user = User::where("id", $id)->first();
+
+   //     if ($user->isEmpty()) {
+        if (!$user) {
             return response()->json([
                 'success' => false,
                 'message' => 'لم يتم العثور على المستخدم'
             ], 404);
         }
+        if ($user->role === 'student') {
+            $user->load('student');
+        }
+        if ($user->role === 'director') {
+            $user->load('director');
+        }
+        if ($user->role === 'p_student') {
+            $user->load('p_student');
+        }
+
         return response()->json([  //$this->sendResponse($produ,200);
             'success' => true,
             'data' => $user,

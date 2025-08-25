@@ -8,6 +8,7 @@ use App\Http\Controllers\DirectorController;
 use App\Http\Controllers\PStudentController;
 use App\Http\Controllers\StudentController;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
@@ -30,24 +31,24 @@ class User extends Authenticatable
         'password',
     ];
 */
-    public function admin()
+    public function admin(): HasOne
     {
         return $this->hasOne(AdminController::class);
     }
 
-    public function director()
+    public function director(): HasOne
     {
-        return $this->hasOne(DirectorController::class);
+        return $this->hasOne(Director::class);
     }
 
- public function p_student()
-    {
-        return $this->hasOne(PStudentController::class);
+ public function p_student(): HasOne
+ {
+        return $this->hasOne(P_student::class);
     }
 
-    public function student()
+    public function student(): HasOne
     {
-        return $this->hasOne(StudentController::class);
+        return $this->hasOne(Student::class);
     }
 
     /**
