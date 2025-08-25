@@ -1749,7 +1749,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "1|RnstXGmz9eAmdPo6GGPylYFYSURKIDWd4lEUiazH7c2c5fb6",
+							"value": "2|HO3IK70KZw17nGaAM3zGdf7czJStvawXX2z4E8SD67331b2b",
 							"type": "string"
 						}
 					]
@@ -1763,7 +1763,7 @@
 					}
 				],
 				"url": {
-					"raw": "http://localhost:8000/api/user/4",
+					"raw": "http://localhost:8000/api/user/5",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -1772,13 +1772,13 @@
 					"path": [
 						"api",
 						"user",
-						"4"
+						"5"
 					]
 				}
 			},
 			"response": [
 				{
-					"name": "success",
+					"name": "manager",
 					"originalRequest": {
 						"method": "GET",
 						"header": [
@@ -1789,7 +1789,7 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:8000/api/user/4",
+							"raw": "http://localhost:8000/api/user/1",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1798,13 +1798,13 @@
 							"path": [
 								"api",
 								"user",
-								"4"
+								"1"
 							]
 						}
 					},
 					"status": "OK",
 					"code": 200,
-					"_postman_previewlanguage": null,
+					"_postman_previewlanguage": "json",
 					"header": [
 						{
 							"key": "Host",
@@ -1812,11 +1812,11 @@
 						},
 						{
 							"key": "Date",
-							"value": "Mon, 18 Aug 2025 00:21:44 GMT"
+							"value": "Mon, 25 Aug 2025 15:19:37 GMT"
 						},
 						{
 							"key": "Date",
-							"value": "Mon, 18 Aug 2025 00:21:44 GMT"
+							"value": "Mon, 25 Aug 2025 15:19:37 GMT"
 						},
 						{
 							"key": "Connection",
@@ -1840,7 +1840,208 @@
 						}
 					],
 					"cookie": [],
-					"body": "{\n    \"success\": true,\n    \"data\": [\n        {\n            \"id\": 4,\n            \"role\": \"director\",\n            \"email\": \"0977777773@gmail.com\",\n            \"created_at\": \"2025-08-18T00:11:43.000000Z\",\n            \"updated_at\": \"2025-08-18T00:11:43.000000Z\"\n        }\n    ],\n    \"message\": \" The details of the student \"\n}"
+					"body": "{\n    \"success\": true,\n    \"data\": {\n        \"id\": 1,\n        \"role\": \"manager\",\n        \"email\": \"0999999991@gmail.com\",\n        \"created_at\": \"2025-08-24T20:10:02.000000Z\",\n        \"updated_at\": \"2025-08-24T20:10:02.000000Z\"\n    },\n    \"message\": \" The details of the user \"\n}"
+				},
+				{
+					"name": "student",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/user/16",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"user",
+								"16"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 25 Aug 2025 15:20:23 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 25 Aug 2025 15:20:23 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.4"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"data\": {\n        \"id\": 16,\n        \"role\": \"student\",\n        \"email\": \"0911111115@gmail.com\",\n        \"created_at\": \"2025-08-24T20:10:07.000000Z\",\n        \"updated_at\": \"2025-08-24T20:10:07.000000Z\",\n        \"student\": {\n            \"id\": 5,\n            \"firstname\": \"st5\",\n            \"lastname\": \"st5\",\n            \"date\": \"2020-05-13\",\n            \"address\": \"idlibe\",\n            \"email\": \"0911111115@gmail.com\",\n            \"mobile\": \"0911111115\",\n            \"password\": \"991\",\n            \"the_class\": \"fifth\",\n            \"parents_job\": \"factors\",\n            \"parents_name\": \"psn5\",\n            \"user_id\": 16,\n            \"p_student_id\": 5,\n            \"director_id\": 3,\n            \"created_at\": \"2025-08-24T20:10:07.000000Z\",\n            \"updated_at\": \"2025-08-24T20:10:07.000000Z\"\n        }\n    },\n    \"message\": \" The details of the user \"\n}"
+				},
+				{
+					"name": "p_student",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/user/10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"user",
+								"10"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 25 Aug 2025 15:21:07 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 25 Aug 2025 15:21:07 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.4"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [
+						{
+							"expires": "Invalid Date",
+							"domain": "",
+							"path": ""
+						}
+					],
+					"body": "{\n    \"success\": true,\n    \"data\": {\n        \"id\": 10,\n        \"role\": \"p_student\",\n        \"email\": \"0955555554@gmail.com\",\n        \"created_at\": \"2025-08-24T20:10:05.000000Z\",\n        \"updated_at\": \"2025-08-24T20:10:05.000000Z\",\n        \"p_student\": {\n            \"id\": 4,\n            \"firstname\": \"p_s4\",\n            \"lastname\": \"p_s4\",\n            \"mobile\": \"0955555554\",\n            \"email\": \"0955555554@gmail.com\",\n            \"password\": \"775\",\n            \"son_name\": \"son_p_s4\",\n            \"user_id\": 10,\n            \"created_at\": \"2025-08-24T20:10:07.000000Z\",\n            \"updated_at\": \"2025-08-24T20:10:07.000000Z\"\n        }\n    },\n    \"message\": \" The details of the user \"\n}"
+				},
+				{
+					"name": "director",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/user/5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"user",
+								"5"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 25 Aug 2025 15:21:52 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 25 Aug 2025 15:21:52 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.4"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"data\": {\n        \"id\": 5,\n        \"role\": \"director\",\n        \"email\": \"0977777774@gmail.com\",\n        \"created_at\": \"2025-08-24T20:10:03.000000Z\",\n        \"updated_at\": \"2025-08-24T20:10:03.000000Z\",\n        \"director\": {\n            \"id\": 4,\n            \"firstname\": \"di4\",\n            \"lastname\": \"di4\",\n            \"date\": \"2020-05-11\",\n            \"address\": \"homs\",\n            \"email\": \"0977777774@gmail.com\",\n            \"mobile\": \"0977777774\",\n            \"password\": \"777\",\n            \"user_id\": 5,\n            \"created_at\": \"2025-08-24T20:10:07.000000Z\",\n            \"updated_at\": \"2025-08-24T20:10:07.000000Z\"\n        }\n    },\n    \"message\": \" The details of the user \"\n}"
 				}
 			]
 		},
