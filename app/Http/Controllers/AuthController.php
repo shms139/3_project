@@ -91,10 +91,11 @@ class AuthController extends Controller
     {
         $user = [];
        //$user = Auth::user()->load('student');
-      //$user = User::with('student')->find($id);
-        $user = User::where("id", $id)->first();
+       //$user = User::with('student')->find($id);
+         $user = User::where("id", $id)->first();
+      // $user = User::find($id);
 
-   //     if ($user->isEmpty()) {
+   //   if ($user->isEmpty()) {
         if (!$user) {
             return response()->json([
                 'success' => false,
@@ -110,14 +111,12 @@ class AuthController extends Controller
         if ($user->role === 'p_student') {
             $user->load('p_student');
         }
-
         return response()->json([  //$this->sendResponse($produ,200);
             'success' => true,
             'data' => $user,
             'message' => " The details of the user ",
         ]);
     }
-
 //        // إعادة التوجيه مع رسالة نجاح
 //        return redirect()->route('students.index')->with('success', 'تم حذف الطالب بنجاح');
 
