@@ -47,6 +47,6 @@
     <!-- /.control-sidebar -->
 </div>
 <!-- ./wrapper -->
-
+@include('layouts.footer-scripts')
 </body>
 </html>
