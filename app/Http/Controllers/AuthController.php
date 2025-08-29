@@ -58,6 +58,11 @@ class AuthController extends Controller
                     'message' => 'Manager logged in successfuly',
 //                    'redirect_url' => '/manager/dashboard'
                 ]);
+//
+//                // السماح فقط للمدير أو الموجه
+//                if ($user->role === 'manager' || $user->role === 'director') { //إذا نفس الصفحة للندير والموجه هكذا وإلا
+//                    return redirect()->route('admin.dashboard');
+
             } elseif ($user->role === 'director') {
                 return response()->json([
                     "status" => 200,
@@ -96,9 +101,10 @@ class AuthController extends Controller
         if (Auth::attempt($credentials)) {
             $user = auth()->user();
 
-            // السماح فقط للمدير أو الموجه
-            if ($user->role === 'manager' || $user->role === 'director') {
+            if ($user->role === 'manager') {
                 return redirect()->route('admin.dashboard');
+            } elseif ($user->role === 'director') {
+                return redirect()->route('director.dashboard');
             } else {
                 Auth::logout();
                 return redirect()->back()->withErrors(['email' => 'Unauthorized role for this login.']);
@@ -107,6 +113,7 @@ class AuthController extends Controller
             return redirect()->back()->withErrors(['email' => 'Invalid credentials.']);
         }
     }
+
 
 // لوحة المدير
     public function dashboard()
@@ -124,6 +131,14 @@ class AuthController extends Controller
             'message' => ' You are loged out successfuly'
         ]);
     }
+    public function logoutWeb()
+    {
+        Auth::logout(); // تسجيل خروج المستخدم
+        session()->invalidate(); // تعطيل الجلسة الحالية
+        session()->regenerateToken(); // تجديد توكن CSRF
+        return redirect()->route('login')->with('success', 'تم تسجيل الخروج بنجاح');
+    }
+
 
     public function user($id): JsonResponse
     {

@@ -105,14 +105,14 @@ class AdminController extends Controller
 
     public function register_Director_in_admin(Request $request): \Illuminate\Http\RedirectResponse
     {
-        if (auth()->user()->role !== 'manager') {
-            abort(403, 'Unauthorized');
-        }
+//        if (auth()->user()->role !== 'manager') {
+//            abort(403, 'Unauthorized');
+//        }
         $request->validate([
             'firstname' => ['required', 'string', 'max:10'],
             'lastname' => ['required', 'string', 'max:10'],
             'address' => ['required', 'string'],
-            'date' => ['required', 'date', 'after:2000-01-01', 'before:2020-12-31'],
+            'date' => ['required', 'date', 'after:1970-01-01', 'before:2002-12-31'],
             'mobile' => ['required', 'unique:directors,mobile'],
             'password' => ['required'],
             'email' => ['required', 'email','unique:directors,email'],

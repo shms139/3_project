@@ -10,7 +10,7 @@
         </li>
 
         <li class="nav-item d-none d-sm-inline-block">
-            <a href="#" class="nav-link">Contact</a>
+            <a href="{{ url('director/dashboard') }}" class="nav-link"> عودة </a>
         </li>
     </ul>
 

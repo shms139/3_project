@@ -12,6 +12,7 @@ use App\Models\User;
 use App\Models\WeeklyProgram;
 use Carbon\Carbon;
 use Illuminate\Http\JsonResponse;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 
 class DirectorController extends Controller
@@ -35,6 +36,10 @@ class DirectorController extends Controller
 
         //}
     }
+    public function dashboard()
+    {
+        return view('director.dashboard');
+    }
 
     public function add_mark()
     {
@@ -47,24 +52,19 @@ class DirectorController extends Controller
         ]);
     }
 
-    public function registerParent_student(Request $request): JsonResponse
+    public function registerParent_student(Request $request): RedirectResponse
     {
         if (auth()->user()->role !== 'director') {
             abort(403, 'Unauthorized');
         }
+
         $validatedData = $request->validate([
             'firstname' => ['required', 'string', 'max:10'],
             'lastname' => ['required', 'string', 'max:10'],
-            // 'address' => ['required', 'string'],
-            // 'role' => ['required', 'in:manager,guide,student'],
-            // 'discount' => ['required', 'boolean'],
             'son_name' => ['required', 'string'],
-            // 'date' => ['required', 'date', 'after:2010-01-01', 'before:2020-12-31'],
-            // 'the_class' => ['required', 'string', 'in:first,second,third,fourth,fifth'],
             'mobile' => ['required', 'unique:p_students,mobile'],
             'password' => ['required', 'string'],
             'user_id' => ['required'],
-            // 'salary' => ['required', 'integer', 'min:300000', 'max:700000'],
             'email' => ['required', 'email'],
         ], [
             'mobile.unique' => "Mobile is not unique",
@@ -73,31 +73,19 @@ class DirectorController extends Controller
         $user = P_student::query()->create([
             'firstname' => $request['firstname'],
             'lastname' => $request["lastname"],
-            //   'address' => $request["address"],
-            //   'role' => $request["role"],
-            //    'discount' => $request['Discount'],
             'son_name' => $request["son_name"],
-            //   'parents_name' => $request["parents_name"],
-            // 'the_class' => $request["status"],
-            //'date' => $request["date"],
             'mobile' => $request['mobile'],
-            'password' => $request['password'],
-            //   'subject' => $request['subject'],
-            //  'salary'=>$request['salary'],
+            'password' => bcrypt($request['password']), // 🔐 تشفير الباسورد
             'email' => $request["email"],
             'user_id' => $request['user_id'],
-
         ]);
 
-        return response()////return $request=> username ,mobile and password only but return  $user =>will come all migrate of model ex: username , mobile  password and id and date
-        ->json([
-            'status' => 1,
-            "date" => $user,
-            "message" => "parent_Student created successfuly"
-        ]);
+        // إرجاع المستخدم للداشبورد مع رسالة نجاح
+        return redirect()->route('director.dashboard')
+            ->with('success', "✅ تم تسجيل ولي أمر الطالب {$user->firstname} {$user->lastname} بنجاح!");
     }
 
-    public function registerStudent(Request $request): \Illuminate\Http\JsonResponse
+    public function registerStudent(Request $request): RedirectResponse | JsonResponse
     {
         if (auth()->user()->role !== 'director') {
             abort(403, 'Unauthorized');
@@ -145,62 +133,91 @@ class DirectorController extends Controller
             'user_id' => $request['user_id'],
         ]);
 
+        // إذا الطلب جاي من API (Postman)
+        if ($request->wantsJson()) {
+            return response()////return $request=> usernam ,mobile and password only butreturn  $user =>will come all migrate of model ex: username , mobile  password and id and date
+            ->json([
+                'status' => 1,
+                "date" => $user,
+                "message" => "Student created successfuly"
+            ]);
+        }
+        return redirect()->route('director.students.create')->with('success', 'تم تسجيل الطالب بنجاح ✅');
 
-        return response()////return $request=> usernam ,mobile and password only butreturn  $user =>will come all migrate of model ex: username , mobile  password and id and date
-        ->json([
-            'status' => 1,
-            "date" => $user,
-            "message" => "Student created successfuly"
-        ]);
     }
 
-    public function index_students()
+    public function index_students(Request $request): \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Foundation\Application|\Illuminate\Http\JsonResponse
     {
         if (auth()->user()->role !== 'director') {
             abort(403, 'Unauthorized');
         }
-        $stud = Student::all();//find(1);
-        return response()->json([  //$this->sendResponse($produ,200);
-            'success' => true,
-            'data' => $stud,
-            'message' => " The students ",
-        ]);
-    }
 
-    public function show_student_details($id)
-    {
-        if (auth()->user()->role !== 'director') {
-            abort(403, 'Unauthorized');
-        }
-        $show_det_st = Student::where("id", '=', $id)->get();
-        //   dd($show_det_st);
-        return response()->json([
-            'success' => true,
-            'data' => $show_det_st,
-            'message' => " The details of the student ",
-        ]);
-    }
+        $students = Student::all();
 
-    public function destroy($id)
-    {
-        if (auth()->user()->role !== 'director') {
-            abort(403, 'Unauthorized');
-        }
-        // البحث عن الطالب
-        $student = Student::where("id", $id)->delete();
-        if (!$student) {
+        // إذا الطلب جاي من API (Postman)
+        if ($request->wantsJson()) {
             return response()->json([
-                'success' => false,
-                'message' => 'الطالب غير موجود'
-            ], 404);
+                'success' => true,
+                'data' => $students,
+                'message' => "The students",
+            ]);
         }
-        // الحذف
-        //   $student->delete();
-        return response()->json([
-            'success' => true,
-            'message' => 'تم حذف الطالب بنجاح'
-        ]);
+        // إذا الطلب من الويب
+        return view('director.students-index', compact('students'));
     }
+
+    public function show_student_details(Request $request, $id)
+    {
+        if (auth()->user()->role !== 'director') {
+            abort(403, 'Unauthorized');
+        }
+
+        $student = Student::with('marks')->findOrFail($id);
+
+        // إذا API (Postman)
+        if ($request->wantsJson()) {
+            return response()->json([
+                'success' => true,
+                'data' => $student,
+                'message' => "The details of the student",
+            ]);
+        }
+
+        // إذا الطلب من الويب
+        return view('director.student-details', compact('student'));
+    }
+
+    public function destroy(Request $request, $id): \Illuminate\Http\JsonResponse | \Illuminate\Http\RedirectResponse
+    {
+        if (auth()->user()->role !== 'director') {
+            abort(403, 'Unauthorized');
+        }
+
+        $student = Student::find($id);
+
+        if (!$student) {
+            // API
+            if ($request->wantsJson()) {
+                return response()->json([
+                    'success' => false,
+                    'message' => 'الطالب غير موجود'
+                ], 404);
+            }
+            // ويب
+            return redirect()->route('director.students.index')->with('error', 'الطالب غير موجود ❌');
+        }
+        $student->delete();
+        // API
+        if ($request->wantsJson()) {
+            return response()->json([
+                'success' => true,
+                'message' => 'تم حذف الطالب بنجاح ✅'
+            ]);
+        }
+        // ويب
+        return redirect()->route('director.students.index')->with('success', 'تم حذف الطالب بنجاح ✅');
+    }
+
 
     // إضافة علامة لطالب
     public function addMark(Request $request): JsonResponse
@@ -373,63 +390,94 @@ class DirectorController extends Controller
     }
 
     // حفظ التفقد
-    public function store_check(Request $request): JsonResponse
+    public function store_check(Request $request): \Illuminate\Http\JsonResponse|\Illuminate\Http\RedirectResponse
     {
         if (auth()->user()->role !== 'director') {
-        abort(403, 'Unauthorized');
+            abort(403, 'Unauthorized');
         }
+
         $validated = $request->validate([
-            'student_id' => 'required|exists:students,id',
-            'director_id'  => 'required|exists:directors,id',
-            'date'       => 'required|date',
-            'status'     => 'required|in:حاضر,غائب,متأخر',
+            'student_id'  => 'required|exists:students,id',
+            'director_id' => 'required|exists:directors,id',
+            'date'        => 'required|date',
+            'status'      => 'required|in:حاضر,غائب,متأخر',
         ]);
 
-        $formats = ['Y-m-d', 'd-m-Y', 'd/m/Y'];// هذا بالبوستمان كيف ما بعتت التاريخ يقبله
+        $formats = ['Y-m-d', 'd-m-Y', 'd/m/Y'];
         foreach ($formats as $format) {
             try {
-                $validated['date'] = Carbon::createFromFormat($format, $validated['date'])->format('Y-m-d');
+                $validated['date'] = \Carbon\Carbon::createFromFormat($format, $validated['date'])->format('Y-m-d');
                 break;
             } catch (\Exception $e) {
                 // تجاهل وحاول بالصيغة التالية
             }
         }
 
-        $check =  Check::create($validated);
+        $check = Check::create($validated);
 
-        return response()->json([
-            'success' => true,
-            'message' => 'تم حفظ التفقد بنجاح',
-            'data' => $check,
-        ]);
+        // إذا الطلب API
+        if ($request->wantsJson()) {
+            return response()->json([
+                'success' => true,
+                'message' => 'تم حفظ التفقد بنجاح',
+                'data'    => $check,
+            ]);
+        }
+
+        // إذا الطلب من الويب
+        return redirect()->route('director.attendance')->with('success', '✅ تم تسجيل التفقد بنجاح');
     }
 
-    // عرض التفقد
-    public function index_check(Request $request): JsonResponse
+    public function attendanceForm()
     {
-        $query = Check::query();
-        if (!$query) {// check accept !$query but get function not accepy ! but accepy isEmpty()
-            return response()->json([
-                'success' => false,
-                'message' => 'لا يوجد تفقد لهذه الصف'
-            ], 404);
+        if (auth()->user()->role !== 'director') {
+            abort(403, 'Unauthorized');
         }
+
+        // كل الطلاب لعرضهم في الفورم
+        $students = Student::all();
+
+        return view('director.attendance-create', compact('students'));
+    }
+
+
+    // عرض التفقد
+    public function index_check(Request $request): \Illuminate\Http\JsonResponse|\Illuminate\Contracts\View\View
+    {
+        if (auth()->user()->role !== 'director') {
+            abort(403, 'Unauthorized');
+        }
+
+        $query = Check::query();
 
         if ($request->has('date')) {
             $query->where('date', $request->date);
         }
 
         if ($request->has('director_id')) {
-            $query->where('mentor_id', $request->director_id);
+            $query->where('director_id', $request->director_id);
         }
 
         $records = $query->get();
 
-        return response()->json([
-            'success' => true,
-            'message' => 'تم جلب التفقد بنجاح',
-            'data' => $records
-        ]);
+        // إذا API (Postman)
+        if ($request->wantsJson()) {
+            if ($records->isEmpty()) {
+                return response()->json([
+                    'success' => false,
+                    'message' => 'لا يوجد تفقد لهذه الصف'
+                ], 404);
+            }
+
+            return response()->json([
+                'success' => true,
+                'message' => 'تم جلب التفقد بنجاح',
+                'data' => $records
+            ]);
+        }
+
+        // إذا ويب (Blade)
+        return view('director.attendance-index', compact('records'));
     }
 
 
