@@ -1,22 +1,22 @@
-@extends('layouts.master')
+{{--@extends('layouts.master')--}}
 
-@section("title")
-    الرئيسية
-@stop
+{{--@section("title")--}}
+{{--    الرئيسية--}}
+{{--@stop--}}
 
-@section('css')
-@endsection
+{{--@section('css')--}}
+{{--@endsection--}}
 
-@section("title_page")
-    الرئيسية
-@endsection
+{{--@section("title_page")--}}
+{{--    الرئيسية--}}
+{{--@endsection--}}
 
-@section("title_page2")
-    لوحة التحكم
-@endsection
+{{--@section("title_page2")--}}
+{{--    لوحة التحكم--}}
+{{--@endsection--}}
 
-@section("content")
-@endsection
+{{--@section("content")--}}
+{{--@endsection--}}
 
-@section("scripts")
-@endsection
+{{--@section("scripts")--}}
+{{--@endsection--}}

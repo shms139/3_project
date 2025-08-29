@@ -248,6 +248,9 @@ class DirectorController extends Controller
         ]);
     }
 
+
+
+
     // جلب علامات الطلاب حسب الصف والمادة
 
 
@@ -277,6 +280,29 @@ class DirectorController extends Controller
         ]);
     }
 
+    public function getAllMarksByStudentInClass($studentId, $classId): JsonResponse
+    {
+        // جلب العلامات مع بيانات الطالب والمواد
+        $marks = Mark::with( 'subject')
+            ->where('student_id', $studentId)
+            ->where('the_class_id', $classId)
+            ->get();
+
+        if ($marks->isEmpty()) {
+            return response()->json([
+                'success' => false,
+                'message' => 'لا توجد علامات لهذا الطالب في هذا الصف'
+            ], 404);
+        }
+
+        return response()->json([
+            'success' => true,
+            'data' => $marks,
+            'message' => 'تم جلب جميع علامات الطالب بنجاح'
+        ]);
+    }
+
+
     public function getStudentDetailsByMark($markId): JsonResponse
     {
         $mark = Mark::with('student')->find($markId);
@@ -304,7 +330,7 @@ class DirectorController extends Controller
         $validated =  $request->validate([
             'director_id' => 'required|exists:directors,id',
             'the_class_id' => 'required|exists:the_classes,id',
-            'program_image' => 'required|image|mimes:jpg,jpeg,png|max:2048', // صورة فقط
+            'program_image' => 'required|file|mimes:pdf,jpg,jpeg,png|max:2048', // يسمح بصور و PDF
         ]);
         $formats = ['Y-m-d', 'd-m-Y', 'd/m/Y'];// هذا بالبوستمان كيف ما بعتت التاريخ يقبله
         foreach ($formats as $format) {

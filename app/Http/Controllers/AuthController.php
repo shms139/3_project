@@ -77,6 +77,44 @@ class AuthController extends Controller
         }
     }
 
+    // إظهار نموذج تسجيل الدخول
+    public function showLoginForm()
+    {
+        return view('admin.login');
+    }
+
+// معالجة تسجيل الدخول للويب
+    public function loginWeb(Request $request)
+    {
+        $request->validate([
+            'email' => 'required|email|exists:users,email',
+            'password' => 'required|string',
+        ]);
+
+        $credentials = $request->only('email', 'password');
+
+        if (Auth::attempt($credentials)) {
+            $user = auth()->user();
+
+            // السماح فقط للمدير أو الموجه
+            if ($user->role === 'manager' || $user->role === 'director') {
+                return redirect()->route('admin.dashboard');
+            } else {
+                Auth::logout();
+                return redirect()->back()->withErrors(['email' => 'Unauthorized role for this login.']);
+            }
+        } else {
+            return redirect()->back()->withErrors(['email' => 'Invalid credentials.']);
+        }
+    }
+
+// لوحة المدير
+    public function dashboard()
+    {
+        return view('welcome');
+    }
+
+
     public function logout(): JsonResponse
     {
         Auth::user()->currentAccessToken()->delete();

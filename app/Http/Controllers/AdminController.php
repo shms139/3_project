@@ -6,6 +6,8 @@ use App\Models\Admin;
 use App\Models\Announcement;
 use App\Models\Classes_Ann;
 use App\Models\Director;
+use App\Models\Mark;
+use App\Models\TheClass;
 use App\Models\User;
 use Cassandra\Collection;
 use Illuminate\Http\JsonResponse;
@@ -35,7 +37,16 @@ class AdminController extends Controller
 //        }
     }
 
-        public function createAnnouncements(Request $request): JsonResponse
+    public function create()
+    {
+        if (auth()->user()->role !== 'manager') {
+            abort(403, 'Unauthorized');
+        }
+
+        $classes = TheClass::all();
+        return view('announcements.create', compact('classes'));
+    }
+        public function createAnnouncements(Request $request): \Illuminate\Http\RedirectResponse
         {
             if (auth()->user()->role !== 'manager') {
                 abort(403, 'Unauthorized');
@@ -58,28 +69,41 @@ class AdminController extends Controller
 
             Classes_Ann::create([
                 "the_class_id"     => $request->the_class_id,
-                "announcement_id" => $announcement->id,
+                "announcement_id"  => $announcement->id,
             ]);
+            $announcements = Classes_Ann::with('announcement', 'theClass')->get();
+            return redirect()->back()->with('success', 'Director created successfully');
 
-            return response()->json([
-                'success' => true,
-                'message' => 'تم إضافة الإعلان بنجاح',
-                'data'    => $announcement
-            ]);
+//            return redirect()->route('admin.create-announcements')
+//                ->with('success', 'تم إضافة الإعلان بنجاح');
+
+//            return redirect()->route('announcements.index')
+//                ->with('success', 'تم إضافة الإعلان بنجاح');
+            //            return response()->json([
+//                'success' => true,
+//                'message' => 'تم إضافة الإعلان بنجاح',
+//                'data'    => $announcement
+//            ]);
         }
 
-    public function index_Ann(): JsonResponse
+    public function index_Ann(): object
     {
-        $announcements = Classes_Ann::with('announcement', 'theClass')->get();
+         if (auth()->user()->role !== 'manager') {
+          abort(403, 'Unauthorized');
+        }
+              $announcements = Classes_Ann::with('announcement', 'theClass')->get();
+         return view('announcements.index', compact('announcements'));
 
-        return response()->json([
-            'success' => true,
-            'data'    => $announcements,
-            'message' => 'جميع الإعلانات تم جلبها بنجاح'
-        ]);
+//        return response()->json([
+//            'success' => true,
+//            'data'    => $announcements,
+//            'message' => 'جميع الإعلانات تم جلبها بنجاح'
+//        ]);
     }
 
-    public function register_Director_in_admin(Request $request): JsonResponse
+
+
+    public function register_Director_in_admin(Request $request): \Illuminate\Http\RedirectResponse
     {
         if (auth()->user()->role !== 'manager') {
             abort(403, 'Unauthorized');
@@ -108,51 +132,14 @@ class AdminController extends Controller
             'email' => $request["email"],
             'user_id' => $request['user_id']
         ]);
-
-        return response()////return $request=> username ,mobile and password only but return  $user =>will come all migrate of model ex: username , mobile  password and id and date
-        ->json([
-            'status' => 1,
-            "date" => $user,
-            "message" => "director created successfully",
-
-        ]);
-    }
-
-    public function storeMark(Request $request)
-    {
-        $request->validate([
-            'student_id' => 'required|exists:students,id',
-            'subject_id' => 'required|exists:subjects,id',
-            'mark'       => 'required|integer|min:0|max:100',
-            'exam_date'  => 'required|date',
-        ]);
-
-        $mark = Mark::create([
-            'student_id' => $request->student_id,
-            'subject_id' => $request->subject_id,
-            'mark'       => $request->mark,
-            'exam_date'  => $request->exam_date,
-        ]);
-
-        return response()->json([
-            'success' => true,
-            'data' => $mark,
-            'message' => 'تمت إضافة العلامة بنجاح',
-        ]);
-    }
-    public function getMarksByClassAndSubject($class, $subjectId)
-    {
-        $marks = Mark::with('student')
-            ->whereHas('student', function($query) use ($class) {
-                $query->where('class', $class);
-            })
-            ->where('subject_id', $subjectId)
-            ->get();
-
-        return response()->json([
-            'success' => true,
-            'data' => $marks,
-        ]);
+        return redirect()->back()->with('success', 'Director created successfully');
+//        return response()////return $request=> username ,mobile and password only but return  $user =>will come all migrate of model ex: username , mobile  password and id and date
+//        ->json([
+//            'status' => 1,
+//            "date" => $user,
+//            "message" => "director created successfully",
+//
+//        ]);
     }
 
 }

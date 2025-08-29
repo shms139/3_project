@@ -3484,11 +3484,11 @@
 						{
 							"key": "program_image",
 							"type": "file",
-							"src": "/C:/xampp1/htdocs/php_course/laravel/3_project/public/storage/111.jpg"
+							"src": "/C:/Users/2023/Desktop/برنامج الدوام - الفصل الثاني 2025-١.pdf"
 						},
 						{
 							"key": "the_class_id",
-							"value": "1",
+							"value": "3",
 							"type": "text"
 						},
 						{
@@ -4371,6 +4371,87 @@
 					],
 					"cookie": [],
 					"body": "{\n    \"success\": true,\n    \"message\": \"تم جلب التفقد بنجاح\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"director_id\": 1,\n            \"student_id\": 1,\n            \"date\": \"2012-02-02\",\n            \"status\": \"حاضر\",\n            \"created_at\": \"2025-08-24T20:10:07.000000Z\",\n            \"updated_at\": \"2025-08-24T20:10:07.000000Z\"\n        },\n        {\n            \"id\": 2,\n            \"director_id\": 2,\n            \"student_id\": 2,\n            \"date\": \"2012-01-01\",\n            \"status\": \"غائب\",\n            \"created_at\": \"2025-08-24T20:10:07.000000Z\",\n            \"updated_at\": \"2025-08-24T20:10:07.000000Z\"\n        },\n        {\n            \"id\": 3,\n            \"director_id\": 3,\n            \"student_id\": 3,\n            \"date\": \"2013-02-03\",\n            \"status\": \"متأخر\",\n            \"created_at\": \"2025-08-24T20:10:07.000000Z\",\n            \"updated_at\": \"2025-08-24T20:10:07.000000Z\"\n        },\n        {\n            \"id\": 4,\n            \"director_id\": 1,\n            \"student_id\": 1,\n            \"date\": \"2020-01-02\",\n            \"status\": \"حاضر\",\n            \"created_at\": \"2025-08-24T20:13:59.000000Z\",\n            \"updated_at\": \"2025-08-24T20:13:59.000000Z\"\n        },\n        {\n            \"id\": 5,\n            \"director_id\": 1,\n            \"student_id\": 1,\n            \"date\": \"2020-01-02\",\n            \"status\": \"حاضر\",\n            \"created_at\": \"2025-08-24T20:19:11.000000Z\",\n            \"updated_at\": \"2025-08-24T20:19:11.000000Z\"\n        },\n        {\n            \"id\": 6,\n            \"director_id\": 1,\n            \"student_id\": 1,\n            \"date\": \"2020-01-02\",\n            \"status\": \"حاضر\",\n            \"created_at\": \"2025-08-24T20:19:21.000000Z\",\n            \"updated_at\": \"2025-08-24T20:19:21.000000Z\"\n        },\n        {\n            \"id\": 7,\n            \"director_id\": 3,\n            \"student_id\": 5,\n            \"date\": \"2020-01-02\",\n            \"status\": \"متأخر\",\n            \"created_at\": \"2025-08-24T20:21:59.000000Z\",\n            \"updated_at\": \"2025-08-24T20:21:59.000000Z\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "getAllMarksByStudent",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "3|qL8TG6oycItVxoGBgVUKCCKMrVoOOKmEDWAjRxvvdd6d192a",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/getAllMarksByStudentInClass/3/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"getAllMarksByStudentInClass",
+						"3",
+						"2"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/getAllMarksByStudentInClass/3/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"getAllMarksByStudentInClass",
+								"3",
+								"2"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
 				}
 			]
 		}
