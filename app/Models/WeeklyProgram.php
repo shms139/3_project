@@ -20,4 +20,9 @@ class WeeklyProgram extends Model
         return $this->belongsTo(TheClass::class);
     }
 
+    public function class(): BelongsTo
+    {
+        return $this->belongsTo(TheClass::class, 'the_class_id');
+    }
+
 }

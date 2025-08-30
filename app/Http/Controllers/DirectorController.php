@@ -8,6 +8,8 @@ use App\Models\Director_PStudent;
 use App\Models\Mark;
 use App\Models\P_student;
 use App\Models\Student;
+use App\Models\Subject;
+use App\Models\TheClass;
 use App\Models\User;
 use App\Models\WeeklyProgram;
 use Carbon\Carbon;
@@ -220,57 +222,98 @@ class DirectorController extends Controller
 
 
     // إضافة علامة لطالب
-    public function addMark(Request $request): JsonResponse
+    public function addMark(Request $request): \Illuminate\Http\JsonResponse|\Illuminate\Http\RedirectResponse
     {
         if (auth()->user()->role !== 'director') {
             abort(403, 'Unauthorized');
         }
-        $request->validate([
-            'student_id' => 'required|exists:students,id',
-            'subject_id' => 'required|exists:subjects,id',
-            'director_id' => 'required|exists:directors,id',
+
+        $validated = $request->validate([
+            'student_id'   => 'required|exists:students,id',
+            'subject_id'   => 'required|exists:subjects,id',
+            'director_id'  => 'required|exists:directors,id',
             'the_class_id' => 'required|exists:the_classes,id',
-            'mark' => 'required|integer|min:0|max:100',
-//            'exam_date'  => 'required|date',
+            'mark'         => 'required|integer|min:0|max:100',
         ]);
 
-        // التحقق من وجود العلامة مسبقًا
         $exists = Mark::where('student_id', $request->student_id)
             ->where('subject_id', $request->subject_id)
             ->where('the_class_id', $request->the_class_id)
             ->exists();
 
         if ($exists) {
-            return response()->json([
-                'success' => false,
-                'message' => 'تم تسجيل علامة لهذا الطالب في هذه المادة وهذا الصف من قبل.'
-            ], 409);
+            if ($request->wantsJson()) {
+                return response()->json([
+                    'success' => false,
+                    'message' => 'تم تسجيل علامة لهذا الطالب في هذه المادة وهذا الصف من قبل.'
+                ], 409);
+            }
+            return redirect()->back()->with('error', '⚠️ هذه العلامة موجودة مسبقاً');
         }
 
-        // إضافة العلامة إذا ما كانت موجودة
+        $mark = Mark::create($validated);
 
-        $mark = Mark::create([
-            'student_id' => $request->student_id,
-            'subject_id' => $request->subject_id,
-            'the_class_id' => $request->the_class_id,
-            'director_id' => $request->director_id,
-            'mark' => $request->mark,
-            //  'exam_date'  => $request->exam_date,
-        ]);
+        if ($request->wantsJson()) {
+            return response()->json([
+                'success' => true,
+                'data' => $mark,
+                'message' => 'تمت إضافة العلامة بنجاح',
+            ]);
+        }
 
-        return response()->json([
-            'success' => true,
-            'data' => $mark,
-            'message' => 'تمت إضافة العلامة بنجاح',
-        ]);
+        return redirect()->route('director.marks-create')->with('success', '✅ تمت إضافة العلامة بنجاح');
     }
 
+    public function indexMarks(Request $request)
+    {
+        if (auth()->user()->role !== 'director') {
+            abort(403, 'Unauthorized');
+        }
 
+        // جلب العلامات مع الطالب والمادة والصف
+        $marks = \App\Models\Mark::with(['student', 'subject', 'theClass'])->get();
 
+        // 🔹 التحقق إذا فارغ
+        if ($marks->isEmpty()) {
+            if ($request->wantsJson()) {
+                return response()->json([
+                    'success' => false,
+                    'message' => 'لا توجد علامات'
+                ], 404);
+            }
+
+            // للويب نرجع الصفحة مع رسالة
+            return view('director.marks-index', ['marks' => $marks])
+                ->with('error', '🚫 لا توجد علامات بعد');
+        }
+
+        // إذا API (Postman)
+        if ($request->wantsJson()) {
+            return response()->json([
+                'success' => true,
+                'data' => $marks,
+                'message' => 'تم جلب العلامات بنجاح'
+            ]);
+        }
+
+        // إذا Web → صفحة عرض
+        return view('director.marks-index', compact('marks'));
+    }
+
+    public function createMark()
+    {
+        if (auth()->user()->role !== 'director') {
+            abort(403, 'Unauthorized');
+        }
+
+        $students = Student::all();   // كل الطلاب
+        $subjects = Subject::all();   // كل المواد
+        $classes  = TheClass::all();  // كل الصفوف
+
+        return view('director.marks-create', compact('students','subjects','classes'));
+    }
 
     // جلب علامات الطلاب حسب الصف والمادة
-
-
     public function getMarksByClassAndSubject($classId, $subjectId): JsonResponse
     {//  $studentIdو        ->where('student_id', $studentId)    شرط الصف
 
@@ -339,55 +382,60 @@ class DirectorController extends Controller
         ]);
     }
 
-    public function storeWeeklyProgram(Request $request): JsonResponse
+    public function createWeeklyProgram()
     {
         if (auth()->user()->role !== 'director') {
             abort(403, 'Unauthorized');
         }
-        $validated =  $request->validate([
+
+        $classes = TheClass::all(); // كل الصفوف
+        return view('director.programe-create', compact('classes'));
+    }
+
+    public function storeWeeklyProgram(Request $request): \Illuminate\Http\JsonResponse|\Illuminate\Http\RedirectResponse
+    {
+        if (auth()->user()->role !== 'director') abort(403);
+
+        $validated = $request->validate([
             'director_id' => 'required|exists:directors,id',
             'the_class_id' => 'required|exists:the_classes,id',
-            'program_image' => 'required|file|mimes:pdf,jpg,jpeg,png|max:2048', // يسمح بصور و PDF
+            'program_image' => 'required|file|mimes:pdf,jpg,jpeg,png|max:2048',
         ]);
-        $formats = ['Y-m-d', 'd-m-Y', 'd/m/Y'];// هذا بالبوستمان كيف ما بعتت التاريخ يقبله
-        foreach ($formats as $format) {
-            try {
-                $validated['date'] = Carbon::createFromFormat($format, $validated['date'])->format('Y-m-d');
-                break;
-            } catch (\Exception $e) {
-                // تجاهل وحاول بالصيغة التالية
-            }
-        }
 
-        // رفع الصورة وتخزينها
-        $imagePath = $request->file('program_image')->store('صور', 'public');
-        // إنشاء سجل جديد
+        $imagePath = $request->file('program_image')->store('weekly_programs', 'public');
+
         $program = WeeklyProgram::create([
             'program_image' => $imagePath,
-            'director_id' => $request->director_id,
-            'the_class_id' => $request->the_class_id,
+            'director_id' => $validated['director_id'],
+            'the_class_id' => $validated['the_class_id'],
         ]);
-        // رجوع استجابة JSON
-        return response()->json([
-            'success' => true,
-            'message' => 'تمت إضافة البرنامج الأسبوعي بنجاح',
-            'data' => $program
-        ]);
-    }
-    public function indexWeeklyPrograms(): JsonResponse
-    {
-        // جلب كل البرامج مع روابط الصور الكاملة
-        $programs = WeeklyProgram::all()->map(function($program) {
-            $program->program_image_url = asset('storage/' . $program->program_image);
-            return $program;
-        });
 
-        return response()->json([
-            'success' => true,
-            'message' => 'تم جلب البرامج الأسبوعية بنجاح',
-            'data' => $programs
-        ]);
+        return redirect()->route('director.programs.create')->with('success', '✅ تمت إضافة البرنامج الأسبوعي بنجاح');
     }
+    public function indexWeeklyProgramsWeb()
+    {
+        if (auth()->user()->role !== 'director') {
+            abort(403, 'Unauthorized');
+        }
+
+        // جلب كل البرامج مع روابط الصور الكاملة
+        $programs = WeeklyProgram::with('class') // إذا عندك علاقة الصف
+        ->get()
+            ->map(function($program) {
+                $program->program_image_url = asset('storage/' . $program->program_image);
+                return $program;
+            });
+
+//        // التحقق إذا لم توجد برامج
+//        if ($programs->isEmpty()) {
+//            return view('director.programs-index', ['programs' => $programs])
+//                ->with('error', '🚫 لا توجد برامج أسبوعية بعد');
+//        }
+
+        // تمرير البيانات للـ Blade
+        return view('director.programs-index', compact('programs'));
+    }
+
 
     // حفظ التفقد
     public function store_check(Request $request): \Illuminate\Http\JsonResponse|\Illuminate\Http\RedirectResponse

@@ -46,7 +46,7 @@
                     <div class="card-body">
                         <i class="fas fa-users fa-3x text-primary mb-3"></i>
                         <h5 class="card-title">إدارة الطلاب</h5>
-                        <p class="text-muted">عرض وحذف الطلاب</p>
+                        <p class="text-muted">عرض الطلاب وتفاصيل الطلاب وحذف الطلاب</p>
                         <a href="{{ route('director.students.index') }}" class="btn btn-outline-primary">عرض</a>
                     </div>
                 </div>

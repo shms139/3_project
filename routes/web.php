@@ -89,43 +89,32 @@ Route::delete('/director/students/{id}', [DirectorController::class, 'destroy'])
 Route::delete('/director/students/{id}', [DirectorController::class, 'destroy'])
     ->name('director.students.destroy');
 
+// 🔹 عرض صفحة إضافة علامة
+Route::get('/director/marks/create', [DirectorController::class, 'createMark'])
+    ->name('director.marks.create');
 
+// 🔹 حفظ العلامة الجديدة
+Route::post('/director/marks/store', [DirectorController::class, 'addMark'])
+    ->name('director.marks.store');
 
-// 🟢 العلامات
-Route::prefix('director/marks')->middleware('auth')->group(function () {
+// 🔹 عرض جميع العلامات
+Route::get('/director/marks', [DirectorController::class, 'indexMarks'])
+    ->name('director.marks.index');
 
-    // إضافة علامات
-    Route::get('/create', function () {
-        $user = Auth::user();
-        if (!$user || $user->role !== 'director') abort(403);
-        return view('director.marks.create');
-    })->name('director.marks.create');
+// عرض صفحة إضافة برنامج أسبوعي
+Route::get('/director/programs/create', [DirectorController::class, 'createWeeklyProgram'])
+    ->name('director.programs.create');
 
-    // عرض العلامات
-    Route::get('/', function () {
-        $user = Auth::user();
-        if (!$user || $user->role !== 'director') abort(403);
-        return view('director.marks.index');
-    })->name('director.marks.index');
-});
-
-// 🟢 البرامج الأسبوعية
-Route::prefix('director/programs')->middleware('auth')->group(function () {
-
-    // إضافة برنامج أسبوعي
-    Route::get('/create', function () {
-        $user = Auth::user();
-        if (!$user || $user->role !== 'director') abort(403);
-        return view('director.programs.create');
-    })->name('director.programs.create');
-
+// حفظ البرنامج الأسبوعي
+Route::post('/director/programs/store', [DirectorController::class, 'storeWeeklyProgram'])
+    ->name('director.programs.store');
     // عرض البرامج الأسبوعية
     Route::get('/', function () {
         $user = Auth::user();
         if (!$user || $user->role !== 'director') abort(403);
-        return view('director.programs.index');
+        return view('director.programs-index');
     })->name('director.programs.index');
-});
+
 // عرض صفحة أخذ التفقد
 Route::get('/director/attendance', [DirectorController::class, 'attendanceForm'])
     ->name('director.attendance');
